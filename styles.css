@@ -1,0 +1,11 @@
+body {
+    background-color: white;
+    display: flex;
+    flex-direction: column; /* Arrange content in a column */
+    justify-content: center; /* Centers content horizontally */
+    align-items: center; /* Centers content vertically */
+    height: 100vh; /* Full viewport height */
+    font-family: Arial, sans-serif; /* Optional: change the font */
+    text-align: center; /* Center text inside the body */
+}
+
