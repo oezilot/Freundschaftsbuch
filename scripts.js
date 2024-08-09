@@ -29,10 +29,15 @@ function openform() {
     form.action = '/action_page.php';
     
     form.innerHTML = `
-        <label for="fname">First name:</label><br>
+        <label for="fname">Name:</label><br>
+        <input type="text" id="fname" name="fname" value=""><br><br>
+
+        <label for="fname">Birthday:</label><br>
         <input type="text" id="fname" name="fname" value=""><br>
-        <label for="lname">Last name:</label><br>
-        <input type="text" id="lname" name="lname" value=""><br><br>
+
+        <label for="fname">Gender:</label><br>
+        <input type="text" id="fname" name="fname" value=""><br><br>
+
         <button type="button" id="home-button">Home</button>
         <input type="submit" value="Submit">
     `;
