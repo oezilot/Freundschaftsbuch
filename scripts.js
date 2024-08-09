@@ -27,10 +27,12 @@ function openform() {
     const formContainer = document.getElementById('form-container');
     const form = document.createElement('form');
     form.action = '/action_page.php';
+    form.method = 'POST';
+    form.enctype = 'multipart/form-data';  // wichtig für Datei-Uploads
     
     form.innerHTML = `
         <label for="fname">Name:</label><br>
-        <input type="text" id="fname" name="fname" value=""><br><br>
+        <input type="text" id="fname" name="fname" value=""><br>
 
         <label for="fname">Birthday:</label><br>
         <input type="text" id="fname" name="fname" value=""><br>
@@ -38,6 +40,11 @@ function openform() {
         <label for="fname">Gender:</label><br>
         <input type="text" id="fname" name="fname" value=""><br><br>
 
+        <!-- file button upload -->
+        <label for="file-upload">Upload a file:</label><br>
+        <input type="file" id="file-upload" name="file-upload"><br><br><br>
+
+        <!-- buttons for submit and home -->
         <button type="button" id="home-button">Home</button>
         <input type="submit" value="Submit">
     `;
