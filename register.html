@@ -8,10 +8,18 @@
     <link rel="icon" href="book.ico" sizes="48x48">
 </head>
 <body>
-    <h1>Let's become friends!</h1>
-    <button id="home" onclick="gotoindex()">
-        Home
-    </button>
+    <div id="content"> <!-- Wrapper for all content -->
+        <h1 id="main-heading">Let's become friends!</h1>
+        <div>
+            <button id="home" onclick="gotoindex()">
+                Home
+            </button>
+            <button id="form" onclick="openform()">
+                Form
+            </button>
+        </div>
+    </div>
+    <div id="form-container" style="display: none;"></div> <!-- Container for the form -->
     <script src="scripts.js"></script>
 </body>
 </html>
