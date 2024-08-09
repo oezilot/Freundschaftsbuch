@@ -33,11 +33,16 @@ function openform() {
         <input type="text" id="fname" name="fname" value=""><br>
         <label for="lname">Last name:</label><br>
         <input type="text" id="lname" name="lname" value=""><br><br>
+        <button type="button" id="home-button">Home</button>
         <input type="submit" value="Submit">
     `;
     
     // Display the form container and append the form to it
     formContainer.style.display = 'block';
     formContainer.appendChild(form);
+
+    /////////////// Der Link zum Home button
+    document.getElementById('home-button').addEventListener('click', gotoindex);
+
 }
 
