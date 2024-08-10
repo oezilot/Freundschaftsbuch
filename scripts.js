@@ -32,13 +32,17 @@ function openform() {
     
     form.innerHTML = `
         <label for="fname">Name:</label><br>
-        <input type="text" id="fname" name="fname" value=""><br>
-
-        <label for="fname">Birthday:</label><br>
-        <input type="text" id="fname" name="fname" value=""><br>
-
-        <label for="fname">Gender:</label><br>
         <input type="text" id="fname" name="fname" value=""><br><br>
+
+        <label for="birthday">Birthday:</label><br>
+        <input type="date" id="birthday" name="birthday"><br><br>
+
+        <label for="gender">Choose a Gender:</label>
+        <select id="gender" name="gender">
+            <option value="masc">Masc</option>
+            <option value="fem">Fem</option>
+            <option value="else">Else</option>
+        </select><br><br>
 
         <!-- file button upload -->
         <label for="file-upload">Upload a file:</label><br>
