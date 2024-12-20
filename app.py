@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, redirect, session, url_for, flash
 from werkzeug.security import generate_password_hash, check_password_hash
 import sqlite3
-
+import subprocess
 
 # for the png submission
 import os
@@ -11,20 +11,19 @@ import secrets
 from flask_mail import Mail, Message
 
 
-
 app = Flask(__name__)
 app.secret_key = 'secret_key' # For session management (damit man sich einloggen kann braucht es einen secret key!)
 
 # Configuration for Flask-Mail (using Gmail as an example)
-app.config['MAIL_SERVER'] = 'smtp.gmail.com'
-app.config['MAIL_PORT'] = 587
+app.config['MAIL_SERVER'] = 'mail.werft22.net'
+app.config['MAIL_PORT'] = 25
 app.config['MAIL_USE_TLS'] = True
 app.config['MAIL_USE_SSL'] = False
-app.config['MAIL_USERNAME'] = 'zoe.flumini@gmail.com'  # Your email
-app.config['MAIL_PASSWORD'] = 'wvkibvzegmhjxbhj'  # Your email password
+app.config['MAIL_USERNAME'] = 'mailsender'
+app.config['MAIL_PASSWORD'] = 'send-via-nanoo'  # Your email password
 app.config['MAIL_MAX_EMAILS'] = None
 app.config['MAIL_ASCII_ATTACHMENTS'] = False
-app.config['MAIL_DEFAULT_SENDER'] = 'zoe.flumini@gmail.com'
+app.config['MAIL_DEFAULT_SENDER'] = 'noreply@werft22.net'
 
 
 # initialize mail from the imports
@@ -782,4 +781,7 @@ def reactivate_account():
     
 
 if __name__ == '__main__':
+    #subprocess.Popen(['python3', 'backup_script.py'])
     app.run(debug=True)
+
+
