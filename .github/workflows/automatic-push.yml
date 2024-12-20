@@ -21,12 +21,12 @@ jobs:
           mkdir -p ~/.ssh
           echo "${{ secrets.SSH_KEY_PRIVATE_TAMAGOTCHI }}" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan -H 127.0.0.1 >> ~/.ssh/known_hosts
+          ssh-keyscan -H 195.234.163.110 >> ~/.ssh/known_hosts
 
       # 3. Änderungen auf dem Server bereitstellen
       - name: Pull changes and restart service
         run: |
-          ssh -i ~/.ssh/id_rsa zvowevan@127.0.0.1 << 'EOF'
+          ssh -i ~/.ssh/id_rsa zvowevan@195.234.163.110 << 'EOF'
           cd /Projects/Freundschaftsbuch
           git pull origin tamagotchi-server
           sudo systemctl restart freundschaftsbuch.service
