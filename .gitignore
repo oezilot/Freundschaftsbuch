@@ -1,3 +1,6 @@
 # Ignore the database file
 database.db
 venv/
+key.pem
+__pycache__/
+Backup-Files/
