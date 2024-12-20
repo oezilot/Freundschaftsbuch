@@ -1,5 +1,4 @@
-# .github/workflows/deploy.yml
-name: Deploy to Server
+name: Auto-Deploy to Server
 
 on:
   push:
@@ -8,17 +7,27 @@ on:
 
 jobs:
   deploy:
+    name: Deploy to Server
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v3
+      # 1. Repository klonen
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-    - name: Set up SSH
-      uses: webfactory/ssh-agent@v0.5.3
-      with:
-        ssh-private-key: ${{ secrets.SSH_KEY_PRIVATE_TAMAGOTCHI }}
+      # 2. SSH einrichten
+      - name: Set up SSH
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_KEY_PRIVATE_TAMAGOTCHI }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -H 127.0.0.1 >> ~/.ssh/known_hosts
 
-    - name: Deploy changes
-      run: |
-        ssh zvowevan@195.234.163.110 "cd /Projects/Freundschaftsbuch && git pull origin tamagotchi-server && sudo systemctl daemon-reload && sudo systemctl restart freundschaftsbuch.service"
+      # 3. Änderungen auf dem Server bereitstellen
+      - name: Pull changes and restart service
+        run: |
+          ssh -i ~/.ssh/id_rsa zvowevan@127.0.0.1 << 'EOF'
+          cd /Projects/Freundschaftsbuch
+          git pull origin tamagotchi-server
+          sudo systemctl restart freundschaftsbuch.service
+          EOF
