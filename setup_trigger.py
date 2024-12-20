@@ -1,4 +1,4 @@
-# HIHI
+# HALLO VELO ICH WILL HEI GAH!!!
 
 
 import sqlite3
