@@ -1,0 +1,24 @@
+# .github/workflows/deploy.yml
+name: Deploy to Server
+
+on:
+  push:
+    branches:
+      - tamagotchi-server
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Set up SSH
+      uses: webfactory/ssh-agent@v0.5.3
+      with:
+        ssh-private-key: ${{ secrets.SSH_KEY_PRIVATE_TAMAGOTCHI }}
+
+    - name: Deploy changes
+      run: |
+        ssh zvowevan@195.234.163.110 "cd /Projects/Freundschaftsbuch && git pull origin tamagotchi-server && sudo systemctl daemon-reload && sudo systemctl restart freundschaftsbuch.service"
