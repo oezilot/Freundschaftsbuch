@@ -1,4 +1,4 @@
-# HALLO VELO ICH WILL HEI GAH!!!
+# test zuhause
 
 
 import sqlite3
