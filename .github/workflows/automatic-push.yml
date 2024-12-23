@@ -1,4 +1,4 @@
-name: Skript bei Push auf tamagotchi-server ausführen
+name: Sync-Script auf dem Tamagotchi-Server ausführen
 
 on:
   push:
@@ -12,11 +12,17 @@ jobs:
     steps:
       # Schritt 1: Repository auschecken
       - name: Checkout Code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
-      # Schritt 2: Skript ausführen
-      - name: Skript ausführen
+      # Schritt 2: SSH-Schlüssel einrichten und Server authentifizieren
+      - name: SSH-Schlüssel einrichten
         run: |
-          echo "Wechsel zu einem bestimmten Ordner und führe das Skript aus..."
-          cd home/zvowevan/Projects/Webhook-Server || exit 1  # Wechsel in den gewünschten Ordner
-          ./git_sync_freundschaftsbuch.sh  # Hier gibst du den Namen deines Skripts an
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_KEY_PRIVATE_TAMAGOTCHI }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -H 195.234.163.110 >> ~/.ssh/known_hosts
+
+      # Schritt 3: Auf dem Server einloggen und Skript ausführen
+      - name: SSH und Skript ausführen
+        run: |
+          ssh -i ~/.ssh/id_rsa zvowevan@195.234.163.110 "cd /home/zvowevan/Projects/Webhook-Server && ./git_sync_freundschaftsbuch.sh"
