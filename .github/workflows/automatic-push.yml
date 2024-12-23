@@ -1,33 +1,22 @@
-name: Auto-Deploy to Server
+name: Skript bei Push auf tamagotchi-server ausführen
 
 on:
   push:
     branches:
-      - tamagotchi-server
+      - tamagotchi-server  # Hier gibst du den Branch an, auf den der Push ausgeführt wird
 
 jobs:
-  deploy:
-    name: Deploy to Server
-    runs-on: ubuntu-latest
+  run-script:
+    runs-on: ubuntu-latest  # Der Runner (Ubuntu wird hier als Beispiel verwendet)
 
     steps:
-      # 1. Repository klonen
-      - name: Checkout repository
-        uses: actions/checkout@v3
+      # Schritt 1: Repository auschecken
+      - name: Checkout Code
+        uses: actions/checkout@v2
 
-      # 2. SSH einrichten
-      - name: Set up SSH
+      # Schritt 2: Skript ausführen
+      - name: Skript ausführen
         run: |
-          mkdir -p ~/.ssh
-          echo "${{ secrets.SSH_KEY_PRIVATE_TAMAGOTCHI }}" > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan -H 195.234.163.110 >> ~/.ssh/known_hosts
-
-      # 3. Änderungen auf dem Server bereitstellen
-      - name: Pull changes and restart service
-        run: |
-          ssh -i ~/.ssh/id_rsa zvowevan@195.234.163.110 << 'EOF'
-          cd /Projects/Freundschaftsbuch
-          git pull origin tamagotchi-server
-          sudo systemctl restart freundschaftsbuch.service
-          EOF
+          echo "Wechsel zu einem bestimmten Ordner und führe das Skript aus..."
+          cd home/zvowevan/Projects/Webhook-Server || exit 1  # Wechsel in den gewünschten Ordner
+          ./git_sync_freundschaftsbuch.sh  # Hier gibst du den Namen deines Skripts an
