@@ -25,4 +25,4 @@ jobs:
       # Schritt 3: Auf dem Server einloggen und Skript ausführen
       - name: SSH und Skript ausführen
         run: |
-          ssh -i ~/.ssh/id_rsa zvowevan@195.234.163.110 "cd /home/zvowevan/Projects/Webhook-Server && ./git_sync_freundschaftsbuch.sh"
+          ssh -i ~/.ssh/id_rsa zvowevan@195.234.163.110 "cd /home/zvowevan/Projects/Freundschaftsbuch && ./git_sync_freundschaftsbuch.sh"
