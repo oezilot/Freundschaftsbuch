@@ -25,5 +25,5 @@ jobs:
       # Schritt 3: Auf dem Server einloggen und Skript ausführen
       - name: SSH und Skript ausführen
         run: |
-          ssh -i ~/.ssh/id_rsa zoef@81.6.40.143 "cd /home/zoef/Projects/Freundschaftsbuch && git pull origin Poseidon && sudo systemctl restart freundschaftsbuch.service"
+          ssh -t -i ~/.ssh/id_rsa zoef@81.6.40.143 "cd /home/zoef/Projects/Freundschaftsbuch && git pull origin Poseidon && echo POSEIDON_PASSWORT | sudo -S systemctl restart freundschaftsbuch.service"
           
