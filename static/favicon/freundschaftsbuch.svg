@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="160mm"
+   height="159.7mm"
+   viewBox="0 0 160 159.7"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.3.1 (9b9bdc1480, 2023-11-25, custom)"
+   sodipodi:docname="freundschaftsbuch.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="0.7483165"
+     inkscape:cx="396.89089"
+     inkscape:cy="561.25984"
+     inkscape:window-width="1920"
+     inkscape:window-height="1043"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="g2"
+       transform="translate(0,-12)">
+      <rect
+         style="fill:#000000;stroke-width:0.247495"
+         id="rect1"
+         width="140"
+         height="40"
+         x="0"
+         y="12" />
+      <circle
+         style="fill:#000000;stroke-width:0.264583"
+         id="path1"
+         cx="140"
+         cy="32"
+         r="20" />
+    </g>
+    <g
+       id="g3"
+       transform="translate(0,27.9)">
+      <rect
+         style="fill:#000000;stroke-width:0.247495"
+         id="rect1-0"
+         width="140"
+         height="40"
+         x="0"
+         y="12" />
+      <circle
+         style="fill:#000000;stroke-width:0.264583"
+         id="path1-6"
+         cx="140"
+         cy="32"
+         r="20" />
+    </g>
+    <g
+       id="g2-7"
+       transform="translate(0,67.8)">
+      <rect
+         style="fill:#000000;stroke-width:0.247495"
+         id="rect1-9"
+         width="140"
+         height="40"
+         x="0"
+         y="12" />
+      <circle
+         style="fill:#000000;stroke-width:0.264583"
+         id="path1-2"
+         cx="140"
+         cy="32"
+         r="20" />
+    </g>
+    <g
+       id="g2-7-5"
+       transform="translate(0,107.7)">
+      <rect
+         style="fill:#000000;stroke-width:0.247495"
+         id="rect1-9-9"
+         width="140"
+         height="40"
+         x="0"
+         y="12" />
+      <circle
+         style="fill:#000000;stroke-width:0.264583"
+         id="path1-2-2"
+         cx="140"
+         cy="32"
+         r="20" />
+    </g>
+    <g
+       id="g6"
+       transform="matrix(0.87500003,0,0,0.87500003,5.877,3.702)">
+      <rect
+         style="fill:#ffff00;fill-opacity:1;stroke-width:0.196219"
+         id="rect1-9-9-6-9"
+         width="110"
+         height="31.999998"
+         x="0"
+         y="5" />
+      <circle
+         style="fill:#ffff00;fill-opacity:1;stroke-width:0.211667"
+         id="path1-2-2-1-4"
+         cx="110"
+         cy="21"
+         r="15.999999" />
+    </g>
+    <g
+       id="g5"
+       transform="matrix(0.87499997,0,0,0.87499997,5.877,6.634264)">
+      <rect
+         style="fill:#92cc41;fill-opacity:1;stroke-width:0.110683"
+         id="rect1-9-9-6-0-5"
+         width="35"
+         height="31.99999"
+         x="0"
+         y="44.500011" />
+      <circle
+         style="fill:#92cc41;fill-opacity:1;stroke-width:0.211666"
+         id="path1-2-2-1-3-4"
+         cx="34.999996"
+         cy="60.499996"
+         r="15.999995" />
+    </g>
+    <g
+       id="g4"
+       transform="matrix(0.875,0,0,0.875,5.877,10.475)">
+      <rect
+         style="fill:#ff0000;fill-opacity:1;stroke-width:0.150836"
+         id="rect1-9-9-6"
+         width="65"
+         height="31.999998"
+         x="0"
+         y="83.800003" />
+      <circle
+         style="fill:#ff0000;fill-opacity:1;stroke-width:0.211666"
+         id="path1-2-2-1-3-4-3"
+         cx="64.999992"
+         cy="99.799995"
+         r="15.999994" />
+    </g>
+    <g
+       id="g7"
+       transform="matrix(0.87500003,0,0,0.87500003,5.877,15.349997)">
+      <rect
+         style="fill:#007bff;fill-opacity:1;stroke-width:0.110683"
+         id="rect1-9-9-6-0-5-7"
+         width="35"
+         height="31.999998"
+         x="0"
+         y="122.8" />
+      <circle
+         style="fill:#007bff;fill-opacity:1;stroke-width:0.211666"
+         id="path1-2-2-1-3-4-8"
+         cx="35"
+         cy="138.8"
+         r="15.999999" />
+    </g>
+  </g>
+</svg>
