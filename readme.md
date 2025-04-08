@@ -32,3 +32,7 @@ coding style:
 api? (jeder kann sein eigenes freundschaftsbuch machen mit gewissen parametern)
 
 app für den app store
+
+andere features:
+- sprache ändern
+- piselbilder generieren oder malen mit built-in drawing tool
