@@ -8,7 +8,9 @@ import os
 from werkzeug.utils import secure_filename
 
 import secrets
-from flask_mail import Mail, Message
+
+# Mail
+from flask_mail import Mail, Message # Mail und Message sind Klassen
 
 
 
