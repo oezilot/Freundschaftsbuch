@@ -18,15 +18,13 @@ app = Flask(__name__)
 app.secret_key = 'secret_key' # For session management (damit man sich einloggen kann braucht es einen secret key!)
 
 # Configuration for Flask-Mail (using Gmail as an example)
-app.config['MAIL_SERVER'] = 'smtp.gmail.com'
+app.config['MAIL_SERVER']='live.smtp.mailtrap.io'
 app.config['MAIL_PORT'] = 587
+app.config['MAIL_USERNAME'] = 'api'
+app.config['MAIL_PASSWORD'] = 'd434f80ac59fd887432881fe0a0fffd7'
 app.config['MAIL_USE_TLS'] = True
 app.config['MAIL_USE_SSL'] = False
-app.config['MAIL_USERNAME'] = 'zoe.flumini@gmail.com'  # Your email
-app.config['MAIL_PASSWORD'] = 'wvkibvzegmhjxbhj'  # Your email password
-app.config['MAIL_MAX_EMAILS'] = None
-app.config['MAIL_ASCII_ATTACHMENTS'] = False
-app.config['MAIL_DEFAULT_SENDER'] = 'zoe.flumini@gmail.com'
+app.config['MAIL_DEFAULT_SENDER'] = 'freundschaftsbuch@oezilot.ch' # diese account sendet alle emails
 
 
 # initialize mail from the imports
