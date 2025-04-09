@@ -2,6 +2,9 @@ from flask import Flask, render_template, request, redirect, session, url_for, f
 from werkzeug.security import generate_password_hash, check_password_hash
 import sqlite3
 
+# for the .env file
+from dotenv import load_dotenv
+import os
 
 # for the png submission
 import os
@@ -12,19 +15,20 @@ import secrets
 # Mail
 from flask_mail import Mail, Message # Mail und Message sind Klassen
 
-
+# load variables from the .env-file
+load_dotenv()
 
 app = Flask(__name__)
 app.secret_key = 'secret_key' # For session management (damit man sich einloggen kann braucht es einen secret key!)
 
 # Configuration for Flask-Mail (using Gmail as an example)
-app.config['MAIL_SERVER']='live.smtp.mailtrap.io'
+app.config['MAIL_SERVER']=os.getenv('MAIL_SERVER')
 app.config['MAIL_PORT'] = 587
-app.config['MAIL_USERNAME'] = 'api'
-app.config['MAIL_PASSWORD'] = 'd434f80ac59fd887432881fe0a0fffd7'
+app.config['MAIL_USERNAME'] = os.getenv('MAIL_USERNAME')
+app.config['MAIL_PASSWORD'] = os.getenv('MAIL_PASSWORD')
 app.config['MAIL_USE_TLS'] = True
 app.config['MAIL_USE_SSL'] = False
-app.config['MAIL_DEFAULT_SENDER'] = 'freundschaftsbuch@oezilot.ch' # diese account sendet alle emails
+app.config['MAIL_DEFAULT_SENDER'] = os.getenv('MAIL_DEFAULT_SENDER') # diese account sendet alle emails
 
 
 # initialize mail from the imports
