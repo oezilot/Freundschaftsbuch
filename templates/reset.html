@@ -9,7 +9,7 @@
 {% endif %}
 
 <h2>Reset Password</h2>
-<form method="POST" action="{{ url_for('reset_password') }}">
+<form method="POST" action="{{ url_for('auth.reset_password') }}">
     <label for="email">Enter your email to reset password:</label>
     <input type="email" name="email" required>
     <input type="submit" value="Reset Password">

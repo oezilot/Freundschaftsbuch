@@ -7,7 +7,7 @@
 <h1>Create a Post</h1>
 <br>
 
-<form action="{{url_for('post')}}" method="post" enctype="multipart/form-data">
+<form action="{{url_for('post.post')}}" method="post" enctype="multipart/form-data">
 
 <section class="showcase" v-for="sample in collection" :key="sample">
   <section class="nes-container with-title">
@@ -210,7 +210,7 @@
 
   </form>
 
-  <form action="{{url_for('post')}}" method="post" enctype="multipart/form-data">
+  <form action="{{url_for('post.post')}}" method="post" enctype="multipart/form-data">
     <button class="nes-btn is-error" type="submit" name="abbrechen" value="Abbrechen">Abbrechen</button>
   </form>
 </div>

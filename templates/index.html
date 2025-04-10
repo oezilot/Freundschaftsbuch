@@ -15,7 +15,7 @@
     <ul class="nes-list is-circle">
       {% for admin_post in admin_posts %}
         <li>
-          <a href="{{ url_for('show_post', username=admin_post['username']) }}">
+          <a href="{{ url_for('post.show_post', username=admin_post['username']) }}">
             {{ admin_post['username'] }}'s Post
           </a>
 
@@ -35,7 +35,7 @@
     <ul class="nes-list is-circle">
       {% for user_post in user_posts %}
         <li>
-          <a href="{{ url_for('show_post', username=user_post['username']) }}">
+          <a href="{{ url_for('post.show_post', username=user_post['username']) }}">
             {{ user_post['username'] }}'s Post
           </a>
 
@@ -51,7 +51,7 @@
   </div>
 
   {% if user_posts or admin_posts %}
-    <a class="nes-btn" href="{{ url_for('show_post', username=all_posts[0]['username']) }}">View Book</a>
+    <a class="nes-btn" href="{{ url_for('post.show_post', username=all_posts[0]['username']) }}">View Book</a>
   {% else %}
     <p>No posts available to view.</p>
   {% endif %}

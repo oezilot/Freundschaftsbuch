@@ -6,11 +6,11 @@
   <br>
   <div class="naviagation-buttons margin-h2">
     {% if prev_username %}
-      <a class="nes-btn" href="{{ url_for('show_post', username=prev_username) }}"> <-- Rückwärts</a>
+      <a class="nes-btn" href="{{ url_for('post.show_post', username=prev_username) }}"> <-- Rückwärts</a>
     {% endif %}
     <h2 id="username"><mark>{{ username }}'s Post</mark></h2>
     {% if next_username %}
-      <a class="nes-btn" href="{{ url_for('show_post', username=next_username) }}">Vorwärts --> </a>
+      <a class="nes-btn" href="{{ url_for('post.show_post', username=next_username) }}">Vorwärts --> </a>
     {% endif %}
   </div>
   <br>
