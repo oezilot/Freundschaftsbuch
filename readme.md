@@ -47,6 +47,10 @@ addextras like a pixelmonitor to draw and make illustrations
 
 spread publicity
 
+new favicon (install framework locally?, my own framework?)
+
+admin account nicht als seperates scriptp und eine freundschaftsbuch mail-adresse
+
 
 ## used libraries an pricipals
 - https://pypi.org/project/Flask-Mail/

@@ -1,13 +1,17 @@
-# here the database gets initialised
+# init the databse or do other actions
 
 import sqlite3
 
-# Database setup, sodass tabelle entsteht und informationnnach restart nicht verloren geht. wenn man nachträglich eine kolonne oder so einfügt wird diese einfach dazugefügt (in diesem fall werden aber die daten glaubs gelöscht!)
+
+# ---------------------------
+# |        Datenbank        | 2 tabellen kreieren (usertabelle, posts)
+# ---------------------------
+
 def init_db():
     conn = sqlite3.connect('database.db')
     c = conn.cursor()
 
-    # Drop the old tables (be careful with this step if you have important data)
+    # FOLGENDE ZEILEN AUSKOMMENTIEREN WENN MAN DIE DATENBANK WIPEN MÖCHTE
     #c.execute('DROP TABLE IF EXISTS users')
     #c.execute('DROP TABLE IF EXISTS posts')
 
@@ -21,7 +25,6 @@ def init_db():
                     time TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
                     is_active INTEGER DEFAULT -1,
                     is_admin BOOLEAN DEFAULT 0)''')  # Default is_active = 1 (active)
-
 
     # Create posts table with 'is_active' column for soft deletion
     c.execute('''CREATE TABLE IF NOT EXISTS posts (
@@ -63,6 +66,11 @@ def init_db():
     conn.commit()
     conn.close()
 
+
+
+# ---------------------------------
+# |        Helperfunctions        | 
+# ---------------------------------
 
 # Helper function to get DB connection
 def get_db_connection():
