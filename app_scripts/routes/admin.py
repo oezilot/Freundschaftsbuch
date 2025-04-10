@@ -33,7 +33,7 @@ def admin():
                 conn.execute('UPDATE users SET is_admin = 0 WHERE id = ?', (user_id,))
 
             conn.commit()  # Save the changes to the database
-            return redirect(url_for('admin'))  # Refresh the admin page after changes
+            return redirect(url_for('admin.admin'))  # Refresh the admin page after changes
         
         conn.close()
 
@@ -45,4 +45,4 @@ def admin():
             # If the user is not an admin, show an unauthorized message
             return "Unauthorized access", 403
     else:
-        return redirect(url_for('login'))
+        return redirect(url_for('auth.login'))

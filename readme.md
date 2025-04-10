@@ -71,3 +71,9 @@ admin account nicht als seperates scriptp und eine freundschaftsbuch mail-adress
 - inject_has_post
 - reset_password reset_form
 - run.py
+
+
+## mein code unter der lupe
+- redirect(url_for('login')) = redirect('/login') --> tells flask to issue a redirect to the specified path
+- url_for('login') -> looks up the url-path for the route function called login(), the template which the route-function renders wih render_tamplate
+- render_template('login.html')

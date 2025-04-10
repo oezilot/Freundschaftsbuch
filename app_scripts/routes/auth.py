@@ -16,7 +16,7 @@ def register():
     error_message = None  # Initialize a variable to store the error message
 
     if 'user_id' in session:
-        return redirect(url_for('index'))
+        return redirect(url_for('main.index'))
 
     if request.method == 'POST':
         email = request.form['email']
@@ -39,7 +39,7 @@ def register():
             conn.commit()
 
             # Send notification email to the admin
-            admin_link = url_for('admin', _external=True)
+            admin_link = url_for('admin.admin', _external=True)
             msg = Message('New User Registration Awaiting Approval', 
                           recipients=['zoe.flumini@gmail.com'])  # Admin-E-Mail hier einfügen
             msg.body = f'A new user ({username}, {email}) has registered and is awaiting approval. Please review: {admin_link}'
@@ -48,7 +48,7 @@ def register():
             conn.close()
 
             # Redirect to the login page after successful registration
-            return redirect(url_for('login'))
+            return redirect(url_for('auth.login'))
 
         conn.close()
 
@@ -62,7 +62,7 @@ def login():
     error_message = None  # Initialize the error message
 
     if 'user_id' in session:
-        return redirect(url_for('index'))
+        return redirect(url_for('main.index'))
 
     if request.method == 'POST':
         username_or_email = request.form['username_or_email']  # Can be either username or email
@@ -81,10 +81,10 @@ def login():
                 session['is_admin'] = bool(user['is_admin'])  # Convert is_admin to a boolean
                 
                 if user['is_active'] == -1:
-                    return redirect(url_for('waiting'))
+                    return redirect(url_for('main.waiting'))
                 elif user['is_active'] == 1:
                     # is_admin, id and username are the names of the database columns from users
-                    return redirect(url_for('index'))
+                    return redirect(url_for('main.index'))
                 else:
                     error_message = "Invalid credentials."
         else:
@@ -98,14 +98,14 @@ def login():
 @bp.route('/logout')
 def logout():
     session.clear()
-    return redirect(url_for('landing'))
+    return redirect(url_for('main.landing'))
 
 
 # delete account
 @bp.route('/delete', methods=['POST', 'GET'])
 def delete_account():
     if 'user_id' not in session:
-        return redirect(url_for('login'))  # Redirect to login if not logged in
+        return redirect(url_for('auth.login'))  # Redirect to login if not logged in
 
 
 
@@ -134,7 +134,7 @@ def delete_account():
         # Clear the session
         session.clear()
 
-        return redirect(url_for('landing'))  # Redirect to the landing page
+        return redirect(url_for('main.landing'))  # Redirect to the landing page
 
     # For GET requests, render the delete confirmation page
     return render_template('delete.html')
@@ -159,13 +159,13 @@ def reset_password():
             conn.close()
 
             # Send reset email
-            reset_link = url_for('reset_form', token=reset_token, _external=True)
+            reset_link = url_for('auth.reset_form', token=reset_token, _external=True)
             msg = Message('Reset your password', recipients=[email])
             msg.body = f'Click the link to reset your password: {reset_link}'
             mail.send(msg)
 
             flash('A password reset link has been sent to your email.')
-            return redirect(url_for('login'))
+            return redirect(url_for('auth.login'))
         # if the email provided does not exist there comes this error message
         error_message = "Email not found!"
     return render_template('reset.html', error_message=error_message)
@@ -187,7 +187,7 @@ def reset_form(token):
             conn.close()
 
             flash('Password successfully reset. Please log in.')
-            return redirect(url_for('login'))
+            return redirect(url_for('auth.login'))
         else:
             flash('Invalid or expired token.')
             return redirect(url_for('forgot_password'))
@@ -223,7 +223,7 @@ def reactivate_account():
             session['user_id'] = inactive_user['id']
             session['username'] = inactive_user['username']
 
-            return redirect(url_for('index'))
+            return redirect(url_for('main.index'))
         else:
             # Account not found or invalid credentials
             error_message = "Account not found or invalid credentials"

@@ -19,7 +19,7 @@ bp = Blueprint('main', __name__)
 def landing():
     # If the user is logged in, redirect them to the main index page
     if 'user_id' in session:
-        return redirect(url_for('index'))        
+        return redirect(url_for('main.index'))        
     
     # If the user is not logged in, show the landing page
     return render_template('landing.html')

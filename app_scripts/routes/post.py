@@ -32,7 +32,7 @@ def inject_has_post():
 @bp.route('/post', methods=['GET', 'POST'])
 def post():
     if 'user_id' not in session:
-        return redirect(url_for('login'))
+        return redirect(url_for('auth.login'))
     
     conn = get_db_connection()
 
@@ -42,7 +42,7 @@ def post():
     # If the user is inactive and awaiting approval, redirect them to the waiting page
     if user['is_active'] == -1:
         conn.close()
-        return redirect(url_for('waiting'))
+        return redirect(url_for('main.waiting'))
 
     # in dieser variable werden alle daten des posts der eingeloggten person gespeichert!
     user_post = conn.execute('SELECT * FROM posts WHERE user_id = ?', (session['user_id'],)).fetchone()
@@ -54,7 +54,7 @@ def post():
                 conn.execute('DELETE FROM posts WHERE user_id = ?', (session['user_id'],))
                 conn.commit()
             conn.close()
-            return redirect(url_for('index'))
+            return redirect(url_for('main.index'))
 
         # save the input-information submitted into the form in a variable: 'content' is the name of the textfield of the form
         # es existiert eine variable für jedes inputfeld des forms (ausser für das image nicht!)
@@ -121,7 +121,7 @@ def post():
 
         conn.commit()
         conn.close()
-        return redirect(url_for('index'))
+        return redirect(url_for('main.index'))
 
 
     conn.close()
@@ -138,7 +138,7 @@ def post():
 def edit_post():
     # wenn der user nicht eingeloggt ist dann wird man zur login-page gelinkt
     if 'user_id' not in session:
-        return redirect(url_for('login'))
+        return redirect(url_for('auth.login'))
 
     conn = get_db_connection()
 
@@ -148,7 +148,7 @@ def edit_post():
     # If the user is inactive and awaiting approval, redirect them to the waiting page
     if user['is_active'] == -1:
         conn.close()
-        return redirect(url_for('waiting'))
+        return redirect(url_for('main.waiting'))
 
     # der post des eingeloggten users werden "geholt" (wenn nichts drin ist dann ist post = None)
     post = conn.execute('SELECT * FROM posts WHERE user_id = ?', (session['user_id'],)).fetchone()
@@ -240,7 +240,7 @@ def edit_post():
             conn.commit()
             conn.close()
             print("Post updated in the database.")  # Debugging print
-            return redirect(url_for('index'))
+            return redirect(url_for('main.index'))
 
         # if the delete-button gets clicked
         elif 'delete' in request.form:
@@ -250,7 +250,7 @@ def edit_post():
             conn.commit()
             conn.close()
             print("Post deleted.")  # Debugging print
-            return redirect(url_for('index'))
+            return redirect(url_for('main.index'))
 
 
     conn.close()
