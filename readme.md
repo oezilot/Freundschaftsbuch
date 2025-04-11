@@ -122,6 +122,7 @@ werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'index'
 - create an admin account
 - edit post create post delete post
 - abbrechen des posts
+- mails
 - reset password/change passwort (nur accounts die existieren können ihr passwort resetten, inaktive oder nicht existieende können das nicht)
 
 bugs: wenn jemand mit einem inaktiven acc sein passwort ändert dann kann dieser user sich mit dem alten passwort einloggen
