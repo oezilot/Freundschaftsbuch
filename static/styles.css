@@ -396,17 +396,15 @@ hr {
 
 /* Mobile design  (768px and smaller) */
 
-@media (min-width: 768px) {
-    .navbar {
-      flex-direction: row;
-      justify-content: space-between;
-    }
-  
-    .form-container {
-      width: 70%;
-    }
-  
-    button, input {
-      width: auto;
+@media (max-width: 768px) {
+    .landing-buttons {
+        display: flex;
+        flex-direction: column;   /* Stack the heading and button vertically */
+        align-items: center;      /* Center the content in each section */
+        padding: 20px;
+        border: 4px solid black;
+        background-color: #FFFF00;
+        width: 70vw;
+        border-radius: 15px;
     }
   }

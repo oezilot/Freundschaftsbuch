@@ -35,6 +35,8 @@ andere features:
 
 tests!
 
+all design verbesserungen (freunden etc fragen)
+
 readme mit explanation
 
 try out my own css framework or just a different one
