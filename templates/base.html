@@ -34,7 +34,7 @@
         <!--user is logged in-->
         {% if 'username' in session %}
 
-          {% if request.endpoint != 'index' %}
+          {% if request.endpoint != 'main.index' %}
             <a href="{{ url_for('main.index') }}">Home</a>
           {% endif %}
 
@@ -65,28 +65,28 @@
         <!--request.endpoint == 'functionName'-->
         {% else %}
 
-          {% if request.endpoint == 'reset_password' %}
+          {% if request.endpoint == 'auth.reset_password' %}
           <a href="{{ url_for('auth.login') }}">Go Back</a>
 
-          {% elif request.endpoint == 'reactivate_account' %}
+          {% elif request.endpoint == 'auth.reactivate_account' %}
           <a href="{{ url_for('auth.register') }}">Go Back</a>
   
-          {% elif request.endpoint == 'index' %}
+          {% elif request.endpoint == 'main.index' %}
           <a href="{{ url_for('main.about') }}">Go Back</a>
 
-          {% elif request.endpoint == 'show_post' %}
+          {% elif request.endpoint == 'post.show_post' %}
             <a href="{{ url_for('main.index') }}">Home</a>
 
 
 
-          {% elif request.endpoint == 'about' %}
+          {% elif request.endpoint == 'main.about' %}
           <a href="{{ url_for('main.landing') }}">Go Back</a>
   
-          {% elif request.endpoint == 'login' %}
+          {% elif request.endpoint == 'auth.login' %}
             <a href="{{ url_for('main.landing') }}">Go Back</a>
             <a href="{{ url_for('auth.register') }}">Register</a>
 
-          {% elif request.endpoint == 'register' %}
+          {% elif request.endpoint == 'auth.register' %}
             <a href="{{ url_for('main.landing') }}">Go Back</a>
             <a href="{{ url_for('auth.login') }}">Login</a>
           {% endif %}

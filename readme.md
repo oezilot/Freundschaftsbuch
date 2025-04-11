@@ -88,3 +88,11 @@ HTML
 ## meine errors und was man dagegen tun kann
 - blueprint nicht richtig gehandelt mit den filenamen --> raise BuildError(endpoint, values, method, self)
 werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'index'. Did you mean 'main.index' instead?
+
+
+## bugs (todo)
+- das base.html wird nicht geladen
+
+
+## fragen
+- wie funktioniert eigenlich django?
