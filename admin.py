@@ -1,4 +1,5 @@
-# This file will only get executed when creating a new admin account!
+# with this file admin accounts can be created!
+
 import sqlite3
 from werkzeug.security import generate_password_hash
 import getpass

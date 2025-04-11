@@ -21,12 +21,6 @@ app functionality:
 
 framework lokal installieren
 
-flask app titel ändern!
-
-file structure:
-- better file structure
-- api
-
 coding style:
 - more beautiful code
 
@@ -50,8 +44,6 @@ try out my own css framework or just a different one
 addextras like a pixelmonitor to draw and make illustrations
 
 spread publicity
-
-new favicon (install framework locally?, my own framework?)
 
 admin account nicht als seperates scriptp und eine freundschaftsbuch mail-adresse
 
