@@ -207,10 +207,15 @@
   <input class="update nes-btn" type="submit" name="update" value="Update">
   </form>
 
+  <form action="{{ url_for('post.edit_post') }}" class="update-delete" method="post" enctype="multipart/form-data">
+    <button class="delete nes-btn" type="submit" name="abbrechen" value="Abbrechen">Abbrechen</button>
+  </form>
+
   <!--damit required-felder nicht benötigt werden um den button zu drücken ist dieser button ausserhalb des forms!-->
   <form action="{{ url_for('post.edit_post') }}" class="delete-button" method="post" enctype="multipart/form-data">
     <button class="delete nes-btn is-error" type="submit" name="delete" value="Abbrechen" onclick="return confirm('Are you sure you want to delete this post?');">Delete</button>
   </form>
+
 </div>
 
 {% endblock %}

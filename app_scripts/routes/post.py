@@ -159,7 +159,7 @@ def edit_post():
 
     # if something was posted
     if request.method == 'POST':
-        # if the update-button gets clicked
+        # if the update-button gets clicked ('update' is the name of the button)
         if 'update' in request.form:
             # the updated content is stored in a variable
             content = request.form['content']
@@ -250,6 +250,11 @@ def edit_post():
             conn.commit()
             conn.close()
             print("Post deleted.")  # Debugging print
+            return redirect(url_for('main.index'))
+        
+        # if the abbrechen-button gets clicked
+        elif 'abbrechen' in request.form:
+            print("Abbrechen button clicked")  # Debugging print
             return redirect(url_for('main.index'))
 
 
