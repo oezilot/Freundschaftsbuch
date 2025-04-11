@@ -130,3 +130,4 @@ bugs: wenn jemand mit einem inaktiven acc sein passwort ändert dann kann dieser
 folgendes muss verbessert werden:
 - mail notification wenn ich jemanden accepte oder lösche etc (accepted, deied, deleted, promoted)
 - beim löschen eines accounts etwas lustiges einbauen wie ein sades gesicht und noch fragen ob man wirklich sein account löschen will
+- regex für die emails, es muss eine email sein
