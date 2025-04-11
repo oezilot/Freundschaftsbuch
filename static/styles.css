@@ -45,6 +45,19 @@
     border-radius: 15px;
     background-color: yellow;
     padding: 10px;
+    overflow-wrap: break-word;       /* ✅ Allows text wrapping inside */
+    word-break: break-word;          /* ✅ Breaks long words */
+    box-sizing: border-box;          /* ✅ Ensures padding stays within width */
+}
+.includes ul {
+    padding-left: 1.5em;             /* ✅ Makes room for list bullets */
+    margin: 0;                       /* Remove default margins */
+    list-style-position: inside;     /* Optional: keep bullets inside the box */
+  }
+.includes li {
+  overflow-wrap: break-word;
+  word-break: break-word;
+  line-height: 1.5;
 }
 
 
@@ -397,6 +410,8 @@ hr {
 /* Mobile design  (768px and smaller) */
 
 @media (max-width: 768px) {
+
+    /* landing.html */
     .landing-buttons {
         display: flex;
         flex-direction: column;   /* Stack the heading and button vertically */
@@ -407,4 +422,7 @@ hr {
         width: 70vw;
         border-radius: 15px;
     }
+
+    /* about.html */
+
   }
