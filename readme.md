@@ -39,6 +39,8 @@ all design verbesserungen (freunden etc fragen)
 
 readme mit explanation
 
+bei der errorwolkle das login/register feld ausblenden und stattdessen eine button machen try again
+
 try out my own css framework or just a different one
 
 addextras like a pixelmonitor to draw and make illustrations

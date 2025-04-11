@@ -137,7 +137,6 @@
     justify-content: center;       /* Centers the content horizontally */
     align-items: center;           /* Centers the content vertically */
     height: 85vh;                 /* Full viewport height to center vertically */
-    border: 3px solid black;       /* Adds a 2px solid black border */
     padding: 20px;                 /* Optional: Adds padding inside the border */
     box-sizing: border-box;  
     margin-top: 15px;      /* Ensures padding is included within the border width */
@@ -153,6 +152,7 @@
     padding: 20px;       /* Optional: Innenabstand */
     box-sizing: border-box; /* Bezieht Padding und Border in die Breite ein */
     margin: 0;
+    overflow-y: auto;
 }
 
 
