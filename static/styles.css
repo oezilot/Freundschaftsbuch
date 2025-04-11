@@ -421,7 +421,13 @@ hr {
     text-align: left;          /* Richtet den Text innerhalb der Zellen linksbündig aus */
 }
 
-
+.hamburger {
+    display: none;
+    font-size: 1.5em;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
 
 /* =======================
    Responsive Design
@@ -444,5 +450,11 @@ hr {
     }
 
     /* base.html (nav-bar) */
+    .hamburger {
+        display: block;
+    }
 
+    .nav-base {
+        display:none;
+    }
   }
