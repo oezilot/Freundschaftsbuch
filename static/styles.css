@@ -23,22 +23,34 @@
     align-items: center;      /* Vertically center the button sections */
     gap: 40px;                /* Space between each button section */
 }
-/* Each button section (SignIn, SignUp, About) */
-.signin, .signup, .about {
+
+
+/* =======================
+      General Design
+======================= */
+
+/* container die vertikal zentriert werden sollen */
+.center-horizontally {
     display: flex;
     flex-direction: column;   /* Stack the heading and button vertically */
     align-items: center;      /* Center the content in each section */
 }
+.nes-btn {
+    margin-top: 10px;         /* Add space between the headings and buttons */
+}
+
+
 .includes {
     border: 3px solid black;
     border-radius: 15px;
     background-color: yellow;
     padding: 10px;
 }
-.nes-btn {
-    margin-top: 10px;         /* Add space between the headings and buttons */
-}
-/**/
+
+
+/* =======================
+  Route Design (individual)
+======================= */
 
 /* ABOUT.HTML */
 .about-text {
@@ -381,6 +393,9 @@ hr {
 /* =======================
    Responsive Design
 ======================= */
+
+/* Mobile design  (768px and smaller) */
+
 @media (min-width: 768px) {
     .navbar {
       flex-direction: row;
