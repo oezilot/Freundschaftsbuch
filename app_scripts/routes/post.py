@@ -1,5 +1,5 @@
 from app_scripts.database import get_db_connection
-from flask import Blueprint, render_template, request, redirect, session, url_for
+from flask import Blueprint, current_app, render_template, request, redirect, session, url_for
 import os
 from werkzeug.utils import secure_filename
 
@@ -93,7 +93,7 @@ def post():
             file = request.files['image']
             if file and allowed_file(file.filename):
                 filename = secure_filename(file.filename)
-                file_path = os.path.join(bp.config['UPLOAD_FOLDER'], filename)
+                file_path = os.path.join(current_app.config['UPLOAD_FOLDER'], filename)
                 file.save(file_path)
             else:
                 file_path = None
@@ -203,7 +203,7 @@ def edit_post():
                 if file and allowed_file(file.filename):
                     # Secure the filename and save the new image
                     filename = secure_filename(file.filename)
-                    file_path = os.path.join(bp.config['UPLOAD_FOLDER'], filename)
+                    file_path = os.path.join(current_app.config['UPLOAD_FOLDER'], filename)
                     file.save(file_path)
                     print(f"New image uploaded: {file_path}")  # Debugging print
 

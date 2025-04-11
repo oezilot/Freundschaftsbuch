@@ -119,9 +119,6 @@
     flex-direction: column; /* Ordnet die Child-Elemente vertikal an */
     gap: 10px; 
 }
-
-
-
 .login {
     display: flex;
     flex-direction: column;
@@ -203,8 +200,6 @@
     position: absolute;          /* Position the second button (right side) */
     right: 0;                    /* Align it to the right */
 }
-
-
 
 
 /* QUESTIONS */
@@ -380,3 +375,23 @@ hr {
     padding: 8px;              /* Fügt etwas Abstand innerhalb der Zellen hinzu */
     text-align: left;          /* Richtet den Text innerhalb der Zellen linksbündig aus */
 }
+
+
+
+/* =======================
+   Responsive Design
+======================= */
+@media (min-width: 768px) {
+    .navbar {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  
+    .form-container {
+      width: 70%;
+    }
+  
+    button, input {
+      width: auto;
+    }
+  }
