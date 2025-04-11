@@ -26,7 +26,7 @@
 
     <title>Freundschaftsbuch</title>
   </head>
-  <body class="{% if request.endpoint in ['edit_post', 'post', 'admin', 'about'] %}scrollable-body{% else %}non-scrollable-body{% endif %}">
+  <body class="{% if request.endpoint in ['post.edit_post', 'post.post', 'admin.admin', 'main.about'] %}scrollable-body{% else %}non-scrollable-body{% endif %}">
     <div class="navbar">
             <hr>
 
@@ -39,7 +39,7 @@
           {% endif %}
 
            <!-- Only show Edit/Create Post links if not on edit_post or post page -->
-          {% if request.endpoint not in ['edit_post', 'post'] %}
+          {% if request.endpoint not in ['post.edit_post', 'post'] %}
           <a href="{{ has_post and url_for('post.edit_post') or url_for('post.post') }}">
             {{ has_post and 'Edit Post' or 'Create Post' }}
           </a>
@@ -47,9 +47,9 @@
 
           <a href="{{ url_for('auth.logout') }}">Logout</a>
 
-          {% if not session.get('is_admin', False) and request.endpoint != 'delete_account' %}
+          {% if not session.get('is_admin', False) and request.endpoint != 'auth.delete_account' %}
             <a href="{{ url_for('auth.delete_account') }}" class="float-right" style="background:none;border:none;color:red;cursor:pointer;">Delete Account</a>
-          {% elif session.get('is_admin', False) and request.endpoint != 'admin' %}
+          {% elif session.get('is_admin', False) and request.endpoint != 'admin.admin' %}
             <a href="{{ url_for('admin.admin') }}">Admin</a>
           {% endif %}
 

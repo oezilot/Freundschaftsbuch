@@ -96,3 +96,36 @@ werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'index'
 
 ## fragen
 - wie funktioniert eigenlich django?
+
+
+
+
+
+
+
+
+
+
+
+## test all possible functionalities on the site!
+- reigster
+- login
+- logout
+- delete account
+- deactivate account (und alles was dann der fall sein muss wie nicht einloggen können oder dass der post nicht erscheint)
+- reactivate account
+- alle htmls und css wird schön angezeigt
+- ein post entsteht wenn ein user hinzugefügt wird
+- promote to admin
+- deny
+- accept
+- create an admin account
+- edit post create post delete post
+- abbrechen des posts
+- reset password/change passwort (nur accounts die existieren können ihr passwort resetten, inaktive oder nicht existieende können das nicht)
+
+bugs: wenn jemand mit einem inaktiven acc sein passwort ändert dann kann dieser user sich mit dem alten passwort einloggen
+
+folgendes muss verbessert werden:
+- mail notification wenn ich jemanden accepte oder lösche etc (accepted, deied, deleted, promoted)
+- beim löschen eines accounts etwas lustiges einbauen wie ein sades gesicht und noch fragen ob man wirklich sein account löschen will
