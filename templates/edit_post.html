@@ -9,7 +9,7 @@
 <form action="{{url_for('post.edit_post')}}" method="post" enctype="multipart/form-data">
 
 <section class="showcase" v-for="sample in collection" :key="sample">
-  <section class="nes-container with-title">
+  <section class="override-text nes-container with-title">
     <h2 class="title">Basics</h2>  
     <br>
     <!-- NAME -->
@@ -65,7 +65,7 @@
 <br>
 
 <section class="showcase" v-for="sample in collection" :key="sample">
-  <section class="nes-container with-title">
+  <section class="override-text nes-container with-title">
     <h2 class="title">Bisschen Deeper</h2>  
     
     <!-- FOOD -->
@@ -147,9 +147,9 @@
 <br>
 
 <section class="showcase" v-for="sample in collection" :key="sample">
-  <section class="nes-container with-title">
+  <section class="override-text nes-container with-title">
     <h2 class="title">Entweder Oder</h2>
-    <div class="column-container entweder-oder">
+    <div class="entweder-oder">
       <div class="radio-row">
         <label><input type="radio" name="party_movie" value="party" {% if post and post['party_movie'] == 'party' %}checked{% endif %} required> <span>Party</span></label>
         <label><input type="radio" name="party_movie" value="movienight" {% if post and post['party_movie'] == 'movienight' %}checked{% endif %}> <span>Movie Night</span></label>
@@ -176,11 +176,11 @@
 <br>
 
 <section class="showcase" v-for="sample in collection" :key="sample">
-  <section class="nes-container with-title">
+  <section class="override nes-container with-title">
     <h2 class="title">Uploads</h2>
     <!-- Display the uploaded image -->
     {% if post['image_path'] %}
-      <div>
+      <div class="override">
         <p>Previously uploaded image:</p>
         <div class="image-upload">
           <img src="{{ url_for('static', filename=post['image_path'].split('static/')[-1]) }}" alt="Uploaded Image" style="max-width: 200px; max-height: 200px;">

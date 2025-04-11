@@ -24,6 +24,26 @@
     gap: 40px;                /* Space between each button section */
 }
 
+.override input,
+.override textarea,
+.override select {
+  width: 100%;              /* ✅ Stretch to fill container */
+  max-width: 100%;          /* ✅ Prevent overflow */
+  box-sizing: border-box;   /* ✅ Includes padding in total width */
+}
+
+.override img {
+  max-width: 100%;          /* ✅ Responsive image */
+  height: auto;             /* ✅ Preserve aspect ratio */
+  display: block;           /* ✅ Removes whitespace below image */
+}
+ .override-text {
+    overflow-wrap: break-word;       /* ✅ Allows text wrapping inside */
+    word-break: break-word;          /* ✅ Breaks long words */
+    box-sizing: border-box;
+ }
+  
+
 
 /* =======================
       General Design
