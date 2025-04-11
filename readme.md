@@ -19,6 +19,10 @@ security:
 app functionality:
 - email notification problem (new email server) -> domain muss noch trandferiert werden!
 
+framework lokal installieren
+
+flask app titel ändern!
+
 file structure:
 - better file structure
 - api
