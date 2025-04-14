@@ -421,13 +421,29 @@ hr {
     text-align: left;          /* Richtet den Text innerhalb der Zellen linksbündig aus */
 }
 
-.hamburger {
+#hamburger {
     display: none;
     font-size: 1.5em;
     background: none;
     border: none;
-    cursor: pointer;
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-left: 1rem;
   }
+.strich {
+    background-color: black;
+    width: 100%;
+    height: 25%;
+}
+.cross #strich1 {
+    transform: translateY(0.57rem) rotate(45deg); /*45rotieren und den strich ein wenig runter schieben auf der y-achse*/
+}
+.cross #strich2 {
+    opacity: 0; /*45rotieren und den strich ein wenig runter schieben auf der y-achse*/
+}
+.cross #strich3 {
+    transform: translateY(-0.57rem) rotate(-45deg); /*45rotieren und den strich ein wenig runter schieben auf der y-achse*/
+}
 
 /* =======================
    Responsive Design
@@ -450,8 +466,10 @@ hr {
     }
 
     /* base.html (nav-bar) */
-    .hamburger {
-        display: block;
+    #hamburger {
+        display: flex;
+        flex-direction:column;
+        justify-content:space-between;
     }
 
     .nav-base {

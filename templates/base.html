@@ -97,12 +97,19 @@
       
       
         
-        
+       
   
       </nav>
 
-      <button class="hamburger" onclick="toggleNav()">☰</button>
-      
+
+      <div id="hamburger" class="" onclick="hamburgerRotation(this)">
+        <div class="strich" id="strich1"></div>
+        <div class="strich" id="strich2"></div>
+        <div class="strich" id="strich3"></div>
+      </div>
+
+
+           
       <hr>
 
     
@@ -113,4 +120,10 @@
   
 
   </body>
+  <script>
+    let burger_state = false;
+    function hamburgerRotation(element) { // class lst represent the list of all classes a dom-element has like class="class1 class2, ... -> here we are talking about the classes of the hamburger-div"
+        element.classList.toggle("cross"); // the class cross gets added if it doesnt exist and if it exists it gets removed from the classlist!
+    }
+</script>
 </html>
