@@ -9,7 +9,7 @@ tipp1:
 
     /* hamburger */
     #hamburger {
-        display: flex;
+        display: none;
         flex-direction:column;
         justify-content:space-between;
         width: 1rem;
@@ -48,6 +48,17 @@ tipp1:
         flex-direction:row;
         gap: 12px;
     }
+
+    /* responsive design */
+    @media (max-width: 400px) {
+ 
+        .nav-link {
+            display:none;
+        }
+        #hamburger {
+            display: flex;
+        }
+    }
 </style>
 
 <hr>
@@ -57,9 +68,9 @@ tipp1:
         <div class="strich" id="strich2"></div>
         <div class="strich" id="strich3"></div>
     </div>
-    <a href="#">Hello</a>
-    <a href="#">Thema</a>
-    <a href="#">Liebe</a>
+    <a class="nav-link" href="#">Hello</a>
+    <a class="nav-link" href="#">Thema</a>
+    <a class="nav-link" href="#">Liebe</a>
 </nav>
 <hr>
 
