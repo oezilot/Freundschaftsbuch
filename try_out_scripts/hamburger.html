@@ -1,4 +1,6 @@
 <style>
+
+    /* hamburger */
     #hamburger {
         display: flex;
         flex-direction:column;
@@ -20,17 +22,44 @@
     .cross #strich3 {
         transform: translateY(-38px) rotate(-45deg); /*45rotieren und den strich ein wenig runter schieben auf der y-achse*/
     }
+
+    /* hamburger wall */
+    #hamburger-wall {
+        display:none;
+    }
+    #hamburger.cross ~ #hamburger-wall {
+        display:block;
+    }
+    
+    /* hamburger wall */
+    #hamburger.cross ~ .content {
+        display:none;
+    }
+
 </style>
 
+<hr>
 <div id="hamburger" class="" onclick="hamburgerRotation(this)">
     <div class="strich" id="strich1"></div>
     <div class="strich" id="strich2"></div>
     <div class="strich" id="strich3"></div>
 </div>
+<hr>
 
-<div></div>
+<div class="content" style="background-color: pink;">
+    Inhaltsverzeichnis
+</div>
+
+<div id="hamburger-wall">
+    <h2 class="option">Option 1</h2>
+    <hr>
+    <h2 class="option">Option 2</h2>
+    <hr>
+    <h2 class="option">Option 3</h2>
+</div>
 
 <script>
+    let burger_state = false;
     function hamburgerRotation(element) { // class lst represent the list of all classes a dom-element has like class="class1 class2, ... -> here we are talking about the classes of the hamburger-div"
         element.classList.toggle("cross"); // the class cross gets added if it doesnt exist and if it exists it gets removed from the classlist!
     }
