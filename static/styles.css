@@ -466,13 +466,14 @@ hr {
     }
 
     /* base.html (nav-bar) */
-    #hamburger {
-        display: flex;
-        flex-direction:column;
-        justify-content:space-between;
-    }
+
 
     .nav-base {
         display:none;
+    }
+    .nav-base #hamburger {
+        display:flex;
+        flex-direction:column;
+        justify-content:space-between;
     }
   }

@@ -1,3 +1,10 @@
+<!--
+
+tipp1:
+- something like this #hamburger.cross ~ #hamburger-wall only works if both elements are in the same parent-element!
+
+-->
+
 <style>
 
     /* hamburger */
@@ -23,28 +30,37 @@
         transform: translateY(-0.38rem) rotate(-45deg); /*45rotieren und den strich ein wenig runter schieben auf der y-achse*/
     }
 
-    /* hamburger wall verstecken bei grossen screens*/
+    /* hamburger wall */
     #hamburger-wall {
         display:none;
     }
-    #hamburger.cross ~ #hamburger-wall {
+    nav.nav-open ~ #hamburger-wall {
         display:block;
     }
     
-    /* content verstecken */
-    #hamburger.cross ~ .content {
+    /* hamburger wall */
+    nav.nav-open ~ .content {
         display:none;
     }
 
+    nav {
+        display:flex;
+        flex-direction:row;
+        gap: 12px;
+    }
 </style>
 
 <hr>
+<nav class="navigation">
     <div id="hamburger" class="" onclick="hamburgerRotation(this)">
         <div class="strich" id="strich1"></div>
         <div class="strich" id="strich2"></div>
         <div class="strich" id="strich3"></div>
     </div>
-
+    <a href="#">Hello</a>
+    <a href="#">Thema</a>
+    <a href="#">Liebe</a>
+</nav>
 <hr>
 
 <div class="content" style="background-color: pink;">
@@ -63,12 +79,6 @@
     let burger_state = false;
     function hamburgerRotation(element) { // class lst represent the list of all classes a dom-element has like class="class1 class2, ... -> here we are talking about the classes of the hamburger-div"
         element.classList.toggle("cross"); // the class cross gets added if it doesnt exist and if it exists it gets removed from the classlist!
+        element.parentElement.classList.toggle("nav-open");
     }
 </script>
-
-<!--
-
-links:
-- https://www.w3schools.com/howto/howto_css_menu_icon.asp
-
--->
