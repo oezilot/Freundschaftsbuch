@@ -30,29 +30,36 @@
   </head>
   <body class="{% if request.endpoint in ['post.edit_post', 'post.post', 'admin.admin', 'main.about'] %}scrollable-body{% else %}non-scrollable-body{% endif %}">
     <div class="navbar">
-            <hr>
+      
+      <hr>
 
       <nav class="nav-base">    
         <!--user is logged in-->
         {% if 'username' in session %}
 
+          <div id="hamburger" class="" onclick="hamburgerRotation(this)">
+            <div class="strich" id="strich1"></div>
+            <div class="strich" id="strich2"></div>
+            <div class="strich" id="strich3"></div>
+          </div>
+
           {% if request.endpoint != 'main.index' %}
-            <a href="{{ url_for('main.index') }}">Home</a>
+            <a class="nav-link" href="{{ url_for('main.index') }}">Home</a>
           {% endif %}
 
            <!-- Only show Edit/Create Post links if not on edit_post or post page -->
           {% if request.endpoint not in ['post.edit_post', 'post'] %}
-          <a href="{{ has_post and url_for('post.edit_post') or url_for('post.post') }}">
+          <a class="nav-link" href="{{ has_post and url_for('post.edit_post') or url_for('post.post') }}">
             {{ has_post and 'Edit Post' or 'Create Post' }}
           </a>
           {% endif %}
 
-          <a href="{{ url_for('auth.logout') }}">Logout</a>
+          <a class="nav-link" href="{{ url_for('auth.logout') }}">Logout</a>
 
           {% if not session.get('is_admin', False) and request.endpoint != 'auth.delete_account' %}
-            <a href="{{ url_for('auth.delete_account') }}" class="float-right" style="background:none;border:none;color:red;cursor:pointer;">Delete Account</a>
+            <a class="nav-link" href="{{ url_for('auth.delete_account') }}" class="float-right" style="background:none;border:none;color:red;cursor:pointer;">Delete Account</a>
           {% elif session.get('is_admin', False) and request.endpoint != 'admin.admin' %}
-            <a href="{{ url_for('admin.admin') }}">Admin</a>
+            <a class="nav-link" href="{{ url_for('admin.admin') }}">Admin</a>
           {% endif %}
 
 
@@ -61,6 +68,7 @@
           <!-- Display the logged-in user's username -->
           <span class="username">Logged in as: {{ session['username'] }}</span>
 
+          
 
 
         <!--navigation-bar wenn der user nicht eingeloggt ist-->
@@ -94,36 +102,53 @@
           {% endif %}
 
         {% endif %}
-      
-      
-        <div id="hamburger" class="" onclick="hamburgerRotation(this)">
-          <div class="strich" id="strich1"></div>
-          <div class="strich" id="strich2"></div>
-          <div class="strich" id="strich3"></div>
-        </div>
-       
   
       </nav>
-
-
-
-
-
            
       <hr>
 
-    
+      <div id="hamburger-wall">
+        <!--user is logged in-->
+        {% if 'username' in session %}
+
+          {% if request.endpoint != 'main.index' %}
+            <a class="option" href="{{ url_for('main.index') }}">Home</a>
+            <hr>
+          {% endif %}
+
+           <!-- Only show Edit/Create Post links if not on edit_post or post page -->
+          {% if request.endpoint not in ['post.edit_post', 'post'] %}
+          <a class="option" href="{{ has_post and url_for('post.edit_post') or url_for('post.post') }}">
+            {{ has_post and 'Edit Post' or 'Create Post' }}
+          </a>
+          <hr>
+          {% endif %}
+
+          <a class="option" href="{{ url_for('auth.logout') }}">Logout</a>
+          <hr style="background-color: black;">
+
+          {% if not session.get('is_admin', False) and request.endpoint != 'auth.delete_account' %}
+            <a class="option" href="{{ url_for('auth.delete_account') }}" class="float-right" style="background:none;border:none;color:red;cursor:pointer;">Delete Account</a>
+            <hr>
+
+            {% elif session.get('is_admin', False) and request.endpoint != 'admin.admin' %}
+            <a class="option" href="{{ url_for('admin.admin') }}">Admin</a>
+            <hr>
+            {% endif %}
+
+        {% endif %}
+
+      </div>
       
       {% block content %}{% endblock %}
+
     </div>
-
-  
-
   </body>
-  <script>
+<script>
     let burger_state = false;
     function hamburgerRotation(element) { // class lst represent the list of all classes a dom-element has like class="class1 class2, ... -> here we are talking about the classes of the hamburger-div"
         element.classList.toggle("cross"); // the class cross gets added if it doesnt exist and if it exists it gets removed from the classlist!
+        element.parentElement.classList.toggle("nav-open");
     }
 </script>
 </html>

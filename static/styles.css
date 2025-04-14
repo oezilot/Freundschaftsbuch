@@ -421,19 +421,19 @@ hr {
     text-align: left;          /* Richtet den Text innerhalb der Zellen linksbündig aus */
 }
 
+/* hamburger */
 #hamburger {
     display: none;
-    font-size: 1.5em;
-    background: none;
-    border: none;
+    flex-direction:column;
+    justify-content:space-between;
     width: 1.5rem;
     height: 1.5rem;
     margin-left: 1rem;
-  }
+}
 .strich {
     background-color: black;
     width: 100%;
-    height: 25%;
+    height: 20%;
 }
 .cross #strich1 {
     transform: translateY(0.57rem) rotate(45deg); /*45rotieren und den strich ein wenig runter schieben auf der y-achse*/
@@ -443,6 +443,27 @@ hr {
 }
 .cross #strich3 {
     transform: translateY(-0.57rem) rotate(-45deg); /*45rotieren und den strich ein wenig runter schieben auf der y-achse*/
+}
+
+/* hamburger wall */
+#hamburger-wall {
+    display:none;
+    flex-direction:column;
+    justify-content: center;
+}
+nav.nav-open ~ #hamburger-wall {
+    display:flex;
+}
+
+/* hamburger wall */
+nav.nav-open ~ .content {
+    display:none;
+}
+
+nav {
+    display:flex;
+    flex-direction:row;
+    gap: 12px;
 }
 
 /* =======================
@@ -466,14 +487,10 @@ hr {
     }
 
     /* base.html (nav-bar) */
-
-
-    .nav-base {
+    .nav-link {
         display:none;
     }
-    .nav-base #hamburger {
-        display:flex;
-        flex-direction:column;
-        justify-content:space-between;
+    #hamburger {
+        display: flex;
     }
-  }
+}
