@@ -449,7 +449,7 @@ hr {
 #hamburger-wall {
     display:none;
     flex-direction:column;
-    justify-content: center;
+    justify-content: space-evenly;
 }
 nav.nav-open ~ #hamburger-wall {
     display:flex;

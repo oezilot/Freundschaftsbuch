@@ -125,7 +125,7 @@
           {% endif %}
 
           <a class="option" href="{{ url_for('auth.logout') }}">Logout</a>
-          <hr style="background-color: black;">
+          <hr>
 
           {% if not session.get('is_admin', False) and request.endpoint != 'auth.delete_account' %}
             <a class="option" href="{{ url_for('auth.delete_account') }}" class="float-right" style="background:none;border:none;color:red;cursor:pointer;">Delete Account</a>
