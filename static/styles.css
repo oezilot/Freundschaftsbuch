@@ -435,15 +435,7 @@ hr {
     width: 100%;
     height: 20%;
 }
-.cross #strich1 {
-    transform: translateY(0.57rem) rotate(45deg); /*45rotieren und den strich ein wenig runter schieben auf der y-achse*/
-}
-.cross #strich2 {
-    opacity: 0; /*45rotieren und den strich ein wenig runter schieben auf der y-achse*/
-}
-.cross #strich3 {
-    transform: translateY(-0.57rem) rotate(-45deg); /*45rotieren und den strich ein wenig runter schieben auf der y-achse*/
-}
+
 
 /* hamburger wall */
 #hamburger-wall {
@@ -451,14 +443,7 @@ hr {
     flex-direction:column;
     justify-content: space-evenly;
 }
-nav.nav-open ~ #hamburger-wall {
-    display:flex;
-}
 
-/* hamburger wall */
-nav.nav-open ~ .content {
-    display:none;
-}
 
 nav {
     display:flex;
@@ -492,5 +477,23 @@ nav {
     }
     #hamburger {
         display: flex;
+    }
+    .cross #strich1 {
+        transform: translateY(0.57rem) rotate(45deg); /*45rotieren und den strich ein wenig runter schieben auf der y-achse*/
+    }
+    .cross #strich2 {
+        opacity: 0; /*45rotieren und den strich ein wenig runter schieben auf der y-achse*/
+    }
+    .cross #strich3 {
+        transform: translateY(-0.57rem) rotate(-45deg); /*45rotieren und den strich ein wenig runter schieben auf der y-achse*/
+    }
+
+    nav.nav-open ~ #hamburger-wall {
+        display:flex;
+    }
+    
+    /* hamburger wall */
+    nav.nav-open ~ .content {
+        display:none;
     }
 }
