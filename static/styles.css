@@ -434,9 +434,9 @@ hr {
 /* hamburger wall */
 #hamburger-wall {
     display:none;
-    flex-direction:column;
-    justify-content: space-evenly;
+    
 }
+
 
 
 nav {
@@ -514,6 +514,15 @@ body {
 
     nav.nav-open ~ #hamburger-wall {
         display:flex;
+        flex-direction: column;
+        justify-content:space-between;
+        padding:30px;
+
+    }
+    .option {
+        display:flex;
+        font-size:1.5rem;
+        padding:23px;
     }
     
     /* hamburger wall */
