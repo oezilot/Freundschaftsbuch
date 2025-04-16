@@ -31,8 +31,8 @@
   <body class="{% if request.endpoint in ['post.edit_post', 'post.post', 'admin.admin', 'main.about'] %}scrollable-body{% else %}non-scrollable-body{% endif %}">
     <div class="navbar stretch">
       
+      <div id="navbar-complete" class="padding-tb ten">
       <hr>
-
       <nav class="nav-base">    
         <!--user is logged in-->
         {% if 'username' in session %}
@@ -97,9 +97,9 @@
 
         {% endif %}
   
-      </nav>
-           
+      </nav>   
       <hr>
+      </div>
 
       <div id="hamburger-wall">
         <!--user is logged in-->
