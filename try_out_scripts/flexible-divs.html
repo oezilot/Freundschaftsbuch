@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html class="stretch" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .break-word {
+        word-break: break-all;
+    }
+    .scoll {
+        overflow-y:auto;
+    }
+    .purple {
+        background-color: rgb(156, 156, 255);
+    }
+    .ten {
+        height:10%;
+    }
+    .green {
+        background-color: rgb(33, 255, 103);
+    }
+    .orange {
+        background-color: rgb(255, 240, 73);
+    }
+    .eighty {
+        height:70%;
+    }
+    .centerx {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .centery {
+        display:flex;
+        align-items:center;
+        justify-content: center;
+    }
+    .stretch {
+        height: 100vh;
+        width: 100vw;
+    }
+</style>
+    <div class="centerx stretch">
+        <div class="orange ten centery">Header</div>
+        <div class="green ten centery">title</div>
+        <div class="break-word purple eighty scroll centery">contentlllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll</div>
+        <div class="ten centery"><button>Click ME!</button></div>
+    </div>
+</html>
