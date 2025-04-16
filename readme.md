@@ -54,6 +54,7 @@ admin account nicht als seperates scriptp und eine freundschaftsbuch mail-adress
 - https://pypi.org/project/Flask-Mail/
 - https://flask-mail.readthedocs.io/en/latest/ 
 - https://mailtrap.io/blog/flask-email-sending/ (i used mailtrap for sending emails)
+- good css help: https://developer.mozilla.org/en-US/docs/Web/CSS/word-spacing 
 - email-records on cloudflare:
 ![alt text](image.png)
 
