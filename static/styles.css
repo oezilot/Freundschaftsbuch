@@ -183,7 +183,6 @@
     align-items: center; /* Centers form elements vertically */
     justify-content: center;
     padding: 20px;       /* Padding inside the nes-container */
-    width: 100%;         /* Ensure the login container is responsive */
 }
 .login-button {
     display: flex;
@@ -462,6 +461,22 @@ body {
 .break-word {
     word-break: break-all;
     text-align: center;
+}
+
+/* sectioning the page into percentage segments */
+.stretch {
+    height:100vh;
+    width:100vw;
+}
+.ten {
+    height: 10%;
+}
+.ninety {
+    height: 80%;
+}
+.margin-tb {
+    margin-top: 10%;
+    margin-bottom: 10%;
 }
 
 
