@@ -6,7 +6,8 @@
 ## changes for the refactor to happen
 
 compatibilities:
-- mobile version
+- mobile version -> app für den app store
+- api so that everyoe can have their own friendship book where they can be the admin!
 
 transfer:
 - database synchronisation
@@ -16,30 +17,22 @@ design:
 security:
 - hack sicher (sql incections)
 
-app functionality:
-- email notification problem (new email server) -> domain muss noch trandferiert werden!
-
 coding style:
 - more beautiful code
 
 uploads ordner:
 - wenn jemand seinen post löscht muss das zugehörige bild auch im ploads ordner gelöscht werden!
 
-api? (jeder kann sein eigenes freundschaftsbuch machen mit gewissen parametern)
-
-app für den app store
-
 andere features:
 - sprache ändern
+- light und dark mode
 - pixelbilder generieren oder malen mit built-in drawing tool
 
 tests!
 
-all design verbesserungen (freunden etc fragen)
+allg design verbesserungen (freunden etc fragen)
 
 readme mit explanation
-
-bei der errorwolkle das login/register feld ausblenden und stattdessen eine button machen try again
 
 try out my own css framework or just a different one
 
@@ -47,7 +40,6 @@ addextras like a pixelmonitor to draw and make illustrations
 
 spread publicity
 
-admin account nicht als seperates scriptp und eine freundschaftsbuch mail-adresse
 
 
 ## used libraries an pricipals
@@ -90,7 +82,8 @@ werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'index'
 
 
 ## bugs (todo)
-- das base.html wird nicht geladen
+- das base.html wird nicht geladen (blueprints)
+- das fucking css spinnt komplett! ich will meine seite so planen dass 90 10 auteilung existiert!
 
 
 ## fragen
