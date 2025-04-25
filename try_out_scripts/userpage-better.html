@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+</head>
+<style>
+    /*html ist die grösse des bildschirmes des browsers*/
+    /*body so gross machen wie das html*/
+    html, body {
+        width:100%;
+        height:100%;
+        margin:0;
+    }
+    /*der container, das heisst dort wo der gesamte conten drin ist ist immer so gross wie die fläche*/
+    .container {
+    display:flex;
+    flex-direction:column;
+    height:100vh;
+    overflow:hidden; /*child cant escape!*/
+    }
+    .top {
+        background: blue;
+        flex: 0 0 10%;
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+    }
+    .top-buttons {
+        display:flex;
+        flex-direction:row;
+        justify-content:space-evenly;
+    }
+    .bottom {
+        background-color: brown;
+        flex: 0 0 90%; /*nichts wird gestretched etc*/
+        overflow:hidden; /*child cant escape!*/
+        /*-------------------------------------------*/
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        /*--------------------position all elements on the bottom half-----------------------*/
+    }
+    .bottom-buttons {
+        flex: 0 0 10%;
+        /*center the buttons*/
+        display:flex;
+        flex-direction:row;
+        justify-content: space-between;
+        align-items:center;
+        /*because thebuttons get stretched because of the flex display i am going to adjust that in th design for the buttons*/
+
+        /*make the buttons same wide as the text below*/
+        width:80%;
+    }
+    .bottom-buttons button {
+        height:30%;
+    }
+    .bottom-text {
+        flex: 0 0 80%;
+        display:flex; /*display flex makes the height 100% of ots parent for some reason*/
+        flex-direction:column;
+        justify-content:flex-start;
+        align-items:center;
+        overflow-x: auto;         /* Ermöglicht horizontales Scrollen bei Bedarf */
+        overflow-y: auto; 
+    }
+    .bottom-button {
+        flex: 0 0 10%;
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+    }
+    .bottom-button button {
+        height:30%;
+    }
+    .bottom-text div {
+        background-color:aqua;
+        /*grösse anpassen, imme dieselbe greööse (relativ gesehen natürlich)*/
+        width: 80%;
+        height: 100%;
+        /*paragraph zentrieren*/
+        /*overflow vermeiden!*/
+        overflow: auto;          /* Verhindert, dass der Inhalt über die Tabelle hinausläuft */
+        overflow-x: auto;
+    }
+    p {
+        text-align: justify;
+        padding:10%;
+        margin:0;
+    }
+    h1 {
+        padding:0;
+        margin:0;
+    }
+    button {
+        padding:0;
+    }
+
+
+</style>
+<body>
+    <div class="container">
+        <div class="top">
+            <div class="top-buttons">
+                <button>lll</button>
+                <button>lll</button>
+                <button>lll</button>
+                <button>lll</button>
+                username
+            </div>
+        </div>
+        <div class="bottom">
+            <div class="bottom-buttons">
+                <button><-</button>
+                <h1>user</h1>
+                <button>-></button>
+            </div>
+            <div class="bottom-text">
+                <div>
+                    <p>Diesen Satz hast du bestimmt schon lange nicht mehr gehört, aber es wird nicht das letzte Mal sein, denn genau das frage ich dich jetzt! Ich habe diese Web-App programmiert, um Beiträge von meinen Freunden zu sammeln und ein Stück Kindheit wieder aufleben zu lassen. Du kannst ein paar Fragen beantworten, vielleicht ein kleines Geheimnis teilen und eine Skizze von dir hochladen. Deinen Beitrag kannst du natürlich jederzeit bearbeiten oder löschen. Diesen Satz hast du bestimmt schon lange nicht mehr gehört, aber es wird nicht das letzte Mal sein, denn genau das frage ich dich jetzt! Ich habe diese Web-App programmiert, um Beiträge von meinen Freunden zu sammeln und ein Stück Kindheit wieder aufleben zu lassen. Du kannst ein paar Fragen beantworten, vielleicht ein kleines Geheimnis teilen und eine Skizze von dir hochladen. Deinen Beitrag kannst du natürlich jederzeit bearbeiten oder löschen.</p>
+                </div>
+            </div>
+            <div class="bottom-button">
+                <button>click me</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<!--
+folgendes muss man immer definieren beim css:
+
+- alle childeren müssen innherlb des containers bleiben und dürfen nicht rausgehen!
+- das ratio definieren 90 und 10 percent
+- percentage bei margin und paddin gbezieht sich immer auf die width des parent divs und
+- wenn man margin hinzufügt kann das zu ärger (ungewollten scrollbars) führen..lieber paddins!
+- warum wird ein teil hidden wenn ich versuche den scrollbar auf ein dic anzuwenden wenn ich auch noch etwas mit desplay flex machen will?
+
+fragen:
+- was passiert mit den margin wenn man display flex hat? (margin wird quasi zu einem added padding!)
+-->
