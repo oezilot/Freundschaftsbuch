@@ -21,7 +21,7 @@
     overflow:hidden; /*child cant escape!*/
     }
     .top {
-        background: blue;
+        background-color: blue;
         flex: 0 0 10%;
         display:flex;
         flex-direction:column;
@@ -59,14 +59,14 @@
     }
     .bottom-text {
         flex: 0 0 90%;
+        width:100%;
         display:flex; /*display flex makes the height 100% of ots parent for some reason*/
         flex-direction:column;
-        justify-content:flex-start;
         align-items:center;
         overflow-x: auto;         /* Ermöglicht horizontales Scrollen bei Bedarf */
         overflow-y: auto; 
     }
-    .bottom-text div {
+    .bottom-text > div {
         background-color:aqua;
         /*grösse anpassen, imme dieselbe greööse (relativ gesehen natürlich)*/
         width: 80%;
@@ -74,7 +74,7 @@
         /*paragraph zentrieren*/
         /*overflow vermeiden!*/
         overflow: auto;          /* Verhindert, dass der Inhalt über die Tabelle hinausläuft */
-        overflow-x: auto;
+        overflow-x: auto;        
     }
     p {
         text-align: justify;
@@ -87,6 +87,12 @@
     }
     button {
         padding:0;
+    }
+    .box {
+        background-color: white;
+        width:75%;
+        height:30%;
+        margin:9px;
     }
 
 
@@ -109,8 +115,12 @@
                 <button>-></button>
             </div>
             <div class="bottom-text">
-                <div>
-                    <p>Diesen Satz hast du bestimmt schon lange nicht mehr gehört, aber es wird nicht das letzte Mal sein, denn genau das frage ich dich jetzt! Ich habe diese Web-App programmiert, um Beiträge von meinen Freunden zu sammeln und ein Stück Kindheit wieder aufleben zu lassen. Du kannst ein paar Fragen beantworten, vielleicht ein kleines Geheimnis teilen und eine Skizze von dir hochladen. Deinen Beitrag kannst du natürlich jederzeit bearbeiten oder löschen. Diesen Satz hast du bestimmt schon lange nicht mehr gehört, aber es wird nicht das letzte Mal sein, denn genau das frage ich dich jetzt! Ich habe diese Web-App programmiert, um Beiträge von meinen Freunden zu sammeln und ein Stück Kindheit wieder aufleben zu lassen. Du kannst ein paar Fragen beantworten, vielleicht ein kleines Geheimnis teilen und eine Skizze von dir hochladen. Deinen Beitrag kannst du natürlich jederzeit bearbeiten oder löschen.</p>
+                <div class="boxes">
+                    <div class="box"></div>
+                    <div class="box"></div>
+                    <div class="box"></div>
+                    <div class="box"></div>
+                    <div class="box"></div>
                 </div>
             </div>
         </div>
@@ -126,6 +136,7 @@ folgendes muss man immer definieren beim css:
 - percentage bei margin und paddin gbezieht sich immer auf die width des parent divs und
 - wenn man margin hinzufügt kann das zu ärger (ungewollten scrollbars) führen..lieber paddins!
 - warum wird ein teil hidden wenn ich versuche den scrollbar auf ein dic anzuwenden wenn ich auch noch etwas mit desplay flex machen will?
+- wie kombiniert man das scrollen und das flexen? ich will ja die divs bestimmt anordner aber nicht das diese sich stretchen etc
 
 fragen:
 - was passiert mit den margin wenn man display flex hat? (margin wird quasi zu einem added padding!)
