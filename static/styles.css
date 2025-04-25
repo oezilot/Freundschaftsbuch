@@ -475,6 +475,10 @@ body {
 }
 
 
+/* userpage design, im mobile design nur einen streifen statt 2! */
+
+
+
 /* =======================
    Responsive Design
 ======================= */
@@ -532,5 +536,14 @@ body {
     body {
         font-family: 'Press Start 2P', cursive;
         font-size: 0.8rem; /* try 1.5rem or more if needed */
+    }
+
+
+    /* make th forwärts und rückwärtsbuttons smaller */
+    .book-left {
+        display:none;
+    }
+    .book-right {
+        display:none;
     }
 }
