@@ -476,7 +476,20 @@ body {
 
 
 /* userpage design, im mobile design nur einen streifen statt 2! */
-
+.book-middle {
+    display:none;
+    border: 2px solid #ccc;              /* Heller Rand für die inneren Boxen */
+    border-radius: 15px;                 /* Runde Ecken für die Boxen */
+    background-color: white;              /* Heller Hintergrund für die Boxen */
+    margin: 0 10px;                      /* Abstand zwischen den Boxen */
+    padding: 20px;                       /* Innenabstand in den Boxen */
+    flex-direction: column;              /* Inhalt wird vertikal gestapelt */
+    justify-content: space-between;      /* Inhalt wird gleichmäßig verteilt */
+    box-sizing: border-box;              /* Verhindert, dass Padding/Borders die Größe beeinflussen */
+    max-width: 100%; 
+    min-height: 100%;                    /* Sorgt dafür dass links und rechts gleich lang sind */
+    overflow: auto;    
+}
 
 
 /* =======================
@@ -545,5 +558,8 @@ body {
     }
     .book-right {
         display:none;
+    }
+    .book-middle {
+        display:flex;
     }
 }
