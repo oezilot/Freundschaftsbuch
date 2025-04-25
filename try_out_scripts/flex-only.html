@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+</head>
+<style>
+    /*html ist die grösse des bildschirmes des browsers*/
+    /*body so gross machen wie das html*/
+    html, body {
+        width:100%;
+        height:100%;
+        margin:0;
+    }
+    /*der container, das heisst dort wo der gesamte conten drin ist ist immer so gross wie die fläche*/
+    .container {
+    display:flex;
+    flex-direction:column;
+    height:100vh;
+    overflow:hidden; /*child cant escape!*/
+    }
+    .top {
+        background: blue;
+        flex: 0 0 10%;
+    }
+    .bottom {
+        background-color: brown;
+        flex: 0 0 90%; /*nichts wird gestretched etc*/
+        overflow:auto; /*scroll if content is too big*/
+        /*-------------------------------------------*/
+        display:flex;
+        flex-direction:column;
+        /*--------------------position the content on the y-achsis-----------------------*/
+        position:relative;
+    }
+    .bottom-buttons {
+        position:absolute;
+        top:10%;
+    }
+    .bottom-text {
+        position:absolute;
+        top:50%;
+        transform: translateY(-50%);
+    }
+    .bottom-text p {
+        background-color:aqua;
+        margin:0; /*removes default margin of the text*/
+    }
+
+</style>
+<body>
+    <div class="container">
+        <div class="top">
+            <div class="top-buttons">
+                <button>lll</button>
+                <button>lll</button>
+                <button>lll</button>
+                <button>lll</button>
+            </div>
+        </div>
+        <div class="bottom">
+            <div class="bottom-buttons">
+                <button>lll</button>
+                <button>lll</button>
+                <button>lll</button>
+                <button>lll</button>
+            </div>
+            <div class="bottom-text">
+                <p>Diesen Satz hast du bestimmt schon lange nicht mehr gehört, aber es wird nicht das letzte Mal sein, denn genau das frage ich dich jetzt! Ich habe diese Web-App programmiert, um Beiträge von meinen Freunden zu sammeln und ein Stück Kindheit wieder aufleben zu lassen. Du kannst ein paar Fragen beantworten, vielleicht ein kleines Geheimnis teilen und eine Skizze von dir hochladen. Deinen Beitrag kannst du natürlich jederzeit bearbeiten oder löschen.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<!--
+folgendes muss man immer definieren beim css:
+
+- alle childeren müssen innherlb des containers bleiben und dürfen nicht rausgehen!
+- das ratio definieren 90 und 10 percent
+
+fragen:
+- was passiert mit den margin wenn man display flex hat? (margin wird quasi zu einem added padding!)
+-->
