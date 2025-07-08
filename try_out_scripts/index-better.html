@@ -49,11 +49,13 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        height: 100%;
         /*--------------------position all elements on the bottom half-----------------------*/
     }
 
     .bottom-buttons {
-        flex: 0 0 10%;
+        /* der untere so viel prozent nimmt es vom .bottom-teil ein */
+        flex: 0 0 15%;
         /*center the buttons*/
         display: flex;
         flex-direction: row;
@@ -70,7 +72,7 @@
     }
 
     .bottom-text {
-        flex: 0 0 80%;
+        flex: 0 0 70%;
         display: flex;
         /*display flex makes the height 100% of ots parent for some reason*/
         flex-direction: column;
@@ -82,7 +84,7 @@
     }
 
     .bottom-button {
-        flex: 0 0 10%;
+        flex: 0 0 15%;
         display: flex;
         flex-direction: column;
         justify-content: center;
