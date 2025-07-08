@@ -1,0 +1,5 @@
+- [ ] userpage responsive machen sodass wenn der bildschrim eine gewisse grösse erreicht dass statt 2 kolonnen nur noch eine da ist!
+- [ ] die 2 htmls auf den bisherigen code übertragen
+- [ ] code aufräumen
+- [ ] dokumentation
+- [ ] pushen und branches organisieren (einiges löschen mergen etc)

@@ -1,102 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>test</title>
+    <title>userpage better</title>
 </head>
 <style>
     /*html ist die grösse des bildschirmes des browsers*/
     /*body so gross machen wie das html*/
-    html, body {
-        width:100%;
-        height:100%;
-        margin:0;
+    html,
+    body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
     }
+
     /*der container, das heisst dort wo der gesamte conten drin ist ist immer so gross wie die fläche*/
     .container {
-    display:flex;
-    flex-direction:column;
-    height:100vh;
-    overflow:hidden; /*child cant escape!*/
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        overflow: hidden;
+        /*child cant escape!*/
     }
+
     .top {
         background-color: blue;
         flex: 0 0 10%;
-        display:flex;
-        flex-direction:column;
-        justify-content:center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
+
     .top-buttons {
-        display:flex;
-        flex-direction:row;
-        justify-content:space-evenly;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
     }
+
     .bottom {
         background-color: brown;
-        flex: 0 0 90%; /*nichts wird gestretched etc*/
-        overflow:hidden; /*child cant escape!*/
+        flex: 0 0 90%;
+        /*nichts wird gestretched etc*/
+        overflow: hidden;
+        /*child cant escape!*/
         /*-------------------------------------------*/
-        display:flex;
-        flex-direction:column;
-        align-items:center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         /*--------------------position all elements on the bottom half-----------------------*/
     }
+
     .bottom-buttons {
         flex: 0 0 10%;
         /*center the buttons*/
-        display:flex;
-        flex-direction:row;
+        display: flex;
+        flex-direction: row;
         justify-content: space-between;
-        align-items:center;
+        align-items: center;
         /*because thebuttons get stretched because of the flex display i am going to adjust that in th design for the buttons*/
 
         /*make the buttons same wide as the text below*/
-        width:80%;
+        width: 80%;
     }
+
     .bottom-buttons button {
-        height:30%;
+        height: 30%;
     }
+
     .bottom-text {
         flex: 0 0 90%;
-        width:100%;
-        display:flex; /*display flex makes the height 100% of ots parent for some reason*/
-        flex-direction:column;
-        align-items:center;
-        overflow-x: auto;         /* Ermöglicht horizontales Scrollen bei Bedarf */
-        overflow-y: auto; 
+        width: 100%;
+        display: flex;
+        /*display flex makes the height 100% of ots parent for some reason*/
+        flex-direction: column;
+        align-items: center;
+        overflow-x: auto;
+        /* Ermöglicht horizontales Scrollen bei Bedarf */
+        overflow-y: auto;
     }
-    .bottom-text > div {
-        background-color:aqua;
+
+    .bottom-text>div {
+        background-color: aqua;
         /*grösse anpassen, imme dieselbe greööse (relativ gesehen natürlich)*/
         width: 80%;
         height: 90%;
         /*paragraph zentrieren*/
         /*overflow vermeiden!*/
-        overflow: auto;          /* Verhindert, dass der Inhalt über die Tabelle hinausläuft */
-        overflow-x: auto;        
+        overflow: auto;
+        /* Verhindert, dass der Inhalt über die Tabelle hinausläuft */
+        overflow-x: auto;
     }
+
     p {
         text-align: justify;
-        padding:10%;
-        margin:0;
+        padding: 10%;
+        margin: 0;
     }
+
     h1 {
-        padding:0;
-        margin:0;
+        padding: 0;
+        margin: 0;
     }
+
     button {
-        padding:0;
+        padding: 0;
     }
+
     .box {
         background-color: white;
-        width:75%;
-        height:30%;
-        margin:9px;
+        width: 75%;
+        height: 30%;
+        margin: 9px;
     }
-
-
 </style>
+
 <body>
     <div class="container">
         <div class="top">
@@ -110,9 +129,9 @@
         </div>
         <div class="bottom">
             <div class="bottom-buttons">
-                <button><-</button>
-                <h1>user</h1>
-                <button>-></button>
+                <button> <- </button>
+                        <h1>user</h1>
+                        <button> -> </button>
             </div>
             <div class="bottom-text">
                 <div class="boxes">
@@ -126,6 +145,7 @@
         </div>
     </div>
 </body>
+
 </html>
 
 <!--
