@@ -1,58 +1,58 @@
-{% extends 'base.html' %}
+{% extends 'base-better.html' %}
 
 {% block content %}
 
 <div style="justify-content:space-evenly; height:80vh;" class="inhaltsverzeichnis content ninety">
 
-    <h2 style="margin:0;" class="break-word ">Inhaltsverzeichnis</h2>
+  <h2 style="margin:0;" class="break-word ">Inhaltsverzeichnis</h2>
 
 
   <!-- User Posts Section -->
   <div style="height:60vh;" class="nes-container inhalt">
     <div>
-    <h3>Admin Posts</h3>
-    <ul class="nes-list is-circle">
-      {% for admin_post in admin_posts %}
+      <h3>Admin Posts</h3>
+      <ul class="nes-list is-circle">
+        {% for admin_post in admin_posts %}
         <li>
           <a href="{{ url_for('post.show_post', username=admin_post['username']) }}">
             {{ admin_post['username'] }}'s Post
           </a>
 
           {% if admin_post['content'] %}
-            (posted on: {{ admin_post['created_at'] }})
+          (posted on: {{ admin_post['created_at'] }})
           {% else %}
-            - No post yet
+          - No post yet
           {% endif %}
         </li>
-      {% endfor %}
-    </ul>
-    <br>
+        {% endfor %}
+      </ul>
+      <br>
 
 
 
-    <h3>User Posts</h3>
-    <ul class="nes-list is-circle">
-      {% for user_post in user_posts %}
+      <h3>User Posts</h3>
+      <ul class="nes-list is-circle">
+        {% for user_post in user_posts %}
         <li>
           <a href="{{ url_for('post.show_post', username=user_post['username']) }}">
             {{ user_post['username'] }}'s Post
           </a>
 
           {% if user_post['content'] %}
-            (posted on: {{ user_post['created_at'] }})
+          (posted on: {{ user_post['created_at'] }})
           {% else %}
-            - No post yet
+          - No post yet
           {% endif %}
         </li>
-      {% endfor %}
-    </ul>
+        {% endfor %}
+      </ul>
     </div>
   </div>
 
   {% if user_posts or admin_posts %}
-    <a class="nes-btn" href="{{ url_for('post.show_post', username=all_posts[0]['username']) }}">View Book</a>
+  <a class="nes-btn" href="{{ url_for('post.show_post', username=all_posts[0]['username']) }}">View Book</a>
   {% else %}
-    <p>No posts available to view.</p>
+  <p>No posts available to view.</p>
   {% endif %}
 </div>
 

@@ -3,3 +3,4 @@
 - [ ] code aufräumen
 - [ ] dokumentation
 - [ ] pushen und branches organisieren (einiges löschen mergen etc)
+- [ ] den korrekten mailserver referenzieren (meinen nixos mailserver hihi)
