@@ -104,7 +104,7 @@
         </div>
 
 
-        <div id="hamburger-wall">
+        <div class="bottom" id="hamburger-wall">
             <!--user is logged in-->
             {% if 'username' in session %}
 
@@ -138,13 +138,14 @@
         </div>
 
 
-        <!-- here comes the content of the webpage (the bottom! -> index, userpage, adminseite) -->
+        <!-- here comes the content of the webpage (the bottom! -> index, userpage, adminseite)  -> das äusserste div hier hat die klasse namens "bottom" -->
         {% block content %}{% endblock %}
-
 
 
     </div>
 </body>
+
+
 <script>
     let burger_state = false;
     function hamburgerRotation(element) { // class lst represent the list of all classes a dom-element has like class="class1 class2, ... -> here we are talking about the classes of the hamburger-div"
