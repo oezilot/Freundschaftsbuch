@@ -736,7 +736,7 @@ body {
     }
 
     /* hamburger wall */
-    div.nav-open~.content {
+    div.nav-open~.bottom {
         display: none;
     }
 
