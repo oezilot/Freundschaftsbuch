@@ -4,7 +4,7 @@
 
 <!-- Title (15%) -->
 <div class="bottom-title">
-  <h1>Inhaltsverzeichnis</h1>
+  <h1 class="text-break">Inhaltsverzeichnis</h1>
 </div>
 
 <!-- Content (70%) -->
@@ -54,7 +54,7 @@
 <!-- Button (15%) -->
 <div class="bottom-button">
   {% if user_posts or admin_posts %}
-  <a class="" href="{{ url_for('post.show_post', username=all_posts[0]['username']) }}">View Book</a>
+  <a class="nes-btn" href="{{ url_for('post.show_post', username=all_posts[0]['username']) }}">View Book</a>
   {% else %}
   <p>No posts available to view.</p>
   {% endif %}
