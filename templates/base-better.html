@@ -104,36 +104,43 @@
         </div>
 
         <div class="bottom" id="hamburger-wall">
-            <!--user is logged in-->
-            {% if 'username' in session %}
+            <div class="space-evenly">
+                <!--user is logged in-->
 
-            {% if request.endpoint != 'main.index' %}
-            <a class="option" href="{{ url_for('main.index') }}">Home</a>
-            <hr>
-            {% endif %}
+                <hr>
 
-            <!-- Only show Edit/Create Post links if not on edit_post or post page -->
-            {% if request.endpoint not in ['post.edit_post', 'post'] %}
-            <a class="option" href="{{ has_post and url_for('post.edit_post') or url_for('post.post') }}">
-                {{ has_post and 'Edit Post' or 'Create Post' }}
-            </a>
-            <hr>
-            {% endif %}
+                {% if 'username' in session %}
 
-            <a class="option" href="{{ url_for('auth.logout') }}">Logout</a>
-            <hr>
+                {% if request.endpoint != 'main.index' %}
+                <a class="option" href="{{ url_for('main.index') }}">Home</a>
+                <hr>
+                {% endif %}
 
-            {% if not session.get('is_admin', False) and request.endpoint != 'auth.delete_account' %}
-            <a class="option" href="{{ url_for('auth.delete_account') }}" class="float-right"
-                style="background:none;border:none;color:red;cursor:pointer;">Delete Account</a>
-            <hr>
+                <!-- Only show Edit/Create Post links if not on edit_post or post page -->
+                {% if request.endpoint not in ['post.edit_post', 'post'] %}
+                <a class="option" href="{{ has_post and url_for('post.edit_post') or url_for('post.post') }}">
+                    {{ has_post and 'Edit Post' or 'Create Post' }}
+                </a>
+                <hr>
+                {% endif %}
 
-            {% elif session.get('is_admin', False) and request.endpoint != 'admin.admin' %}
-            <a class="option" href="{{ url_for('admin.admin') }}">Admin</a>
-            <hr>
-            {% endif %}
+                <a class="option" href="{{ url_for('auth.logout') }}">Logout</a>
+                <hr>
 
-            {% endif %}
+                {% if not session.get('is_admin', False) and request.endpoint != 'auth.delete_account' %}
+                <a class="option" href="{{ url_for('auth.delete_account') }}" class="float-right"
+                    style="background:none;border:none;color:red;cursor:pointer;">Delete Account</a>
+                <hr>
+
+                {% elif session.get('is_admin', False) and request.endpoint != 'admin.admin' %}
+                <a class="option" href="{{ url_for('admin.admin') }}">Admin</a>
+                <hr>
+                {% endif %}
+
+                {% endif %}
+
+
+            </div>
         </div>
 
         <div class="bottom">
