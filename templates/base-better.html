@@ -40,32 +40,34 @@
             <div class="top-buttons">
                 <!--user is logged in-->
                 {% if 'username' in session %}
+                <div class="nav-links">
 
-                <div id="hamburger" class="" onclick="hamburgerRotation(this)">
-                    <div class="strich" id="strich1"></div>
-                    <div class="strich" id="strich2"></div>
-                    <div class="strich" id="strich3"></div>
+                    <div id="hamburger" class="" onclick="hamburgerRotation(this)">
+                        <div class="strich" id="strich1"></div>
+                        <div class="strich" id="strich2"></div>
+                        <div class="strich" id="strich3"></div>
+                    </div>
+
+                    {% if request.endpoint != 'main.index' %}
+                    <a class="nav-link" href="{{ url_for('main.index') }}">Home</a>
+                    {% endif %}
+
+                    <!-- Only show Edit/Create Post links if not on edit_post or post page -->
+                    {% if request.endpoint not in ['post.edit_post', 'post'] %}
+                    <a class="nav-link" href="{{ has_post and url_for('post.edit_post') or url_for('post.post') }}">
+                        {{ has_post and 'Edit Post' or 'Create Post' }}
+                    </a>
+                    {% endif %}
+
+                    <a class="nav-link" href="{{ url_for('auth.logout') }}">Logout</a>
+
+                    {% if not session.get('is_admin', False) and request.endpoint != 'auth.delete_account' %}
+                    <a class="nav-link" href="{{ url_for('auth.delete_account') }}" class="float-right"
+                        style="background:none;border:none;color:red;cursor:pointer;">Delete Account</a>
+                    {% elif session.get('is_admin', False) and request.endpoint != 'admin.admin' %}
+                    <a class="nav-link" href="{{ url_for('admin.admin') }}">Admin</a>
+                    {% endif %}
                 </div>
-
-                {% if request.endpoint != 'main.index' %}
-                <a class="nav-link" href="{{ url_for('main.index') }}">Home</a>
-                {% endif %}
-
-                <!-- Only show Edit/Create Post links if not on edit_post or post page -->
-                {% if request.endpoint not in ['post.edit_post', 'post'] %}
-                <a class="nav-link" href="{{ has_post and url_for('post.edit_post') or url_for('post.post') }}">
-                    {{ has_post and 'Edit Post' or 'Create Post' }}
-                </a>
-                {% endif %}
-
-                <a class="nav-link" href="{{ url_for('auth.logout') }}">Logout</a>
-
-                {% if not session.get('is_admin', False) and request.endpoint != 'auth.delete_account' %}
-                <a class="nav-link" href="{{ url_for('auth.delete_account') }}" class="float-right"
-                    style="background:none;border:none;color:red;cursor:pointer;">Delete Account</a>
-                {% elif session.get('is_admin', False) and request.endpoint != 'admin.admin' %}
-                <a class="nav-link" href="{{ url_for('admin.admin') }}">Admin</a>
-                {% endif %}
 
                 <!-- Display the logged-in user's username -->
                 <span>Logged in as: {{ session['username'] }}</span>
@@ -74,29 +76,31 @@
                 <!--request.endpoint == 'functionName'-->
                 {% else %}
 
-                {% if request.endpoint == 'auth.reset_password' %}
-                <a href="{{ url_for('auth.login') }}">Go Back</a>
+                <div class="nav-links">
+                    {% if request.endpoint == 'auth.reset_password' %}
+                    <a href="{{ url_for('auth.login') }}">Go Back</a>
 
-                {% elif request.endpoint == 'auth.reactivate_account' %}
-                <a href="{{ url_for('auth.register') }}">Go Back</a>
+                    {% elif request.endpoint == 'auth.reactivate_account' %}
+                    <a href="{{ url_for('auth.register') }}">Go Back</a>
 
-                {% elif request.endpoint == 'main.index' %}
-                <a href="{{ url_for('main.about') }}">Go Back</a>
+                    {% elif request.endpoint == 'main.index' %}
+                    <a href="{{ url_for('main.about') }}">Go Back</a>
 
-                {% elif request.endpoint == 'post.show_post' %}
-                <a href="{{ url_for('main.index') }}">Home</a>
+                    {% elif request.endpoint == 'post.show_post' %}
+                    <a href="{{ url_for('main.index') }}">Home</a>
 
-                {% elif request.endpoint == 'main.about' %}
-                <a href="{{ url_for('main.landing') }}">Go Back</a>
+                    {% elif request.endpoint == 'main.about' %}
+                    <a href="{{ url_for('main.landing') }}">Go Back</a>
 
-                {% elif request.endpoint == 'auth.login' %}
-                <a href="{{ url_for('main.landing') }}">Go Back</a>
-                <a href="{{ url_for('auth.register') }}">Register</a>
+                    {% elif request.endpoint == 'auth.login' %}
+                    <a href="{{ url_for('main.landing') }}">Go Back</a>
+                    <a href="{{ url_for('auth.register') }}">Register</a>
 
-                {% elif request.endpoint == 'auth.register' %}
-                <a href="{{ url_for('main.landing') }}">Go Back</a>
-                <a href="{{ url_for('auth.login') }}">Login</a>
-                {% endif %}
+                    {% elif request.endpoint == 'auth.register' %}
+                    <a href="{{ url_for('main.landing') }}">Go Back</a>
+                    <a href="{{ url_for('auth.login') }}">Login</a>
+                    {% endif %}
+                </div>
 
                 {% endif %}
             </div>
@@ -157,7 +161,7 @@
     let burger_state = false;
     function hamburgerRotation(element) { // class list represent the list of all classes a dom-element has like class="class1 class2, ... -> here we are talking about the classes of the hamburger-div"
         element.classList.toggle("cross"); // the class cross gets added if it doesnt exist and if it exists it gets removed from the classlist!
-        element.parentElement.parentElement.classList.toggle("nav-open"); // toggelt die klasse nav-open der grossmutter
+        element.parentElement.parentElement.parentElement.classList.toggle("nav-open"); // toggelt die klasse nav-open der grossmutter
     }
 </script>
 
