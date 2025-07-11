@@ -90,6 +90,17 @@ werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'index'
 - wie funktioniert eigenlich django?
 
 
+# Expain the code!
+
+## CSS
+### my components
+1. boxes:
+- black border
+- filled with a special color
+- margin
+- centering
+- scrolling effect
+- effects when squished (linebreak etc)
 
 
 

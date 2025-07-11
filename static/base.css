@@ -22,7 +22,7 @@ body {
 
 .top {
     /* 10% der höhe */
-    background-color: rgb(255, 205, 246);
+    background-color: rgb(255, 255, 255);
     flex: 0 0 10%;
     display: flex;
     flex-direction: column;
@@ -31,7 +31,7 @@ body {
 
 .bottom {
     /* 90% der höhe */
-    background-color: rgb(0, 255, 247);
+    background-color: rgb(255, 255, 255);
     flex: 0 0 90%;
     overflow: hidden;
     display: flex;
@@ -51,24 +51,10 @@ body {
     margin-right: 2vw;
 }
 
-.bottom-title {
-    /* 15% des bottoms in der höhe */
-    flex: 0 0 20%;
-    /*center the buttons*/
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    /*because thebuttons get stretched because of the flex display i am going to adjust that in th design for the buttons*/
-
-    /*make the buttons same wide as the text below*/
-    width: 80%;
-}
-
-.bottom-content {
+/* Box-Component */
+.component-box {
     /* 70% des bottoms in der höhe */
-    background-color: white;
-    flex: 0 0 55%;
+    background-color: rgb(255, 56, 212);
     display: flex;
     /*display flex makes the height 100% of ots parent for some reason*/
     flex-direction: column;
@@ -77,13 +63,12 @@ body {
     overflow-x: auto;
     /* Ermöglicht horizontales Scrollen bei Bedarf */
     overflow-y: auto;
-}
-
-.bottom-button {
-    flex: 0 0 25%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    /* Border etc */
+    border: 5px solid #000;
+    padding: 4vh;
+    /* breite */
+    width: 60%;
+    max-width: 1080px;
 }
 
 .nav-links {
@@ -101,7 +86,7 @@ body {
 
 hr {
     border: none;
-    height: 3px;
+    height: 4px;
     background-color: black;
 }
 
@@ -186,4 +171,12 @@ hr {
         justify-content: center;
         align-items: center;
     }
+}
+
+ul,
+ol {
+    padding-left: 0;
+    margin-left: 0;
+    list-style-position: inside;
+    /* optional: bullets align with text */
 }
