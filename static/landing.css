@@ -1,0 +1,36 @@
+.landing-title {
+    text-align: center;
+    margin-bottom: 20px;
+    /* Adds some space below the title */
+}
+
+/* Flexbox container for the buttons */
+.landing-buttons {
+    display: flex;
+    justify-content: center;
+    /* Center the buttons horizontally */
+    align-items: center;
+    /* Vertically center the button sections */
+    gap: 40px;
+    /* Space between each button section */
+}
+
+.center-horizontally-landing {
+    display: flex;
+    flex-direction: column;
+    /* Stack the heading and button vertically */
+    align-items: center;
+    /* Center the content in each section */
+    gap: 1rem;
+}
+
+@media (max-width: 768px) {
+
+    /* landing.html */
+    .landing-buttons {
+        display: flex;
+        flex-direction: column;
+        /* Stack the heading and button vertically */
+        align-items: center;
+    }
+}

@@ -22,3 +22,24 @@
     word-break: break-all;
     text-align: center;
 }
+
+.center-horizontally {
+    display: flex;
+    flex-direction: column;
+    /* Stack the heading and button vertically */
+    align-items: center;
+    /* Center the content in each section */
+}
+
+.component-box-simple {
+    width: 60%;
+}
+
+.center-horizontally-vertically {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
