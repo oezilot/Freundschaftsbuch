@@ -23,7 +23,7 @@
 
 
     <meta charset="utf-8">
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles-better.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='base.css') }}">
     <!--ensures that the webpage is rendered correctly on different devices-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -69,7 +69,7 @@
             {% endif %}
 
             <!-- Display the logged-in user's username -->
-            <span class="username">Logged in as: {{ session['username'] }}</span>
+            <span>Logged in as: {{ session['username'] }}</span>
 
             <!--navigation-bar wenn der user nicht eingeloggt ist-->
             <!--request.endpoint == 'functionName'-->

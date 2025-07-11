@@ -1,0 +1,177 @@
+.non-scrollable-body {
+    height: 100%;
+    /* Stellt sicher, dass Body die volle Höhe hat */
+    margin: 0;
+    /* Entfernt Standard-Margin vom Body */
+    padding: 0;
+    overflow: hidden;
+    /* Entfernt Standard-Padding vom Body */
+}
+
+.naviagation-buttons {
+    display: flex;
+    justify-content: space-between;
+    /* Center the elements in the container */
+    align-items: center;
+    /* Vertically center the items */
+    width: 95%;
+    /* Full width of the parent container */
+    margin: 0 auto;
+    /* die zahl bedeuted das margin des rands oben und unten und das auto stllt sicher dass es horizontal steht */
+    position: relative;
+    /* Allows absolute positioning for buttons */
+}
+
+hr {
+    border: none;
+    height: 3px;
+    background-color: black;
+}
+
+.flags-container label {
+    display: block;
+    margin-bottom: 8px;
+    /* Adds a little space between label and inputs */
+}
+
+/* HANBURGER-MENU */
+
+/* hamburger icon */
+#hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-left: 1rem;
+}
+
+.strich {
+    background-color: black;
+    width: 100%;
+    height: 20%;
+}
+
+
+/* hamburger wall */
+#hamburger-wall {
+    display: none;
+
+}
+
+/* =======================
+   General Design
+======================= */
+
+.break-word {
+    word-break: break-all;
+    text-align: center;
+}
+
+/* sectioning the page into percentage segments */
+.stretch {
+    height: 100vh;
+    width: 100vw;
+}
+
+.ten {
+    /*navbar*/
+    height: 10vh;
+}
+
+.ninety {
+    /*content*/
+    height: 70vh;
+}
+
+.padding-tb {
+    padding-top: 2.5vh;
+    padding-bottom: 2.5vh;
+}
+
+
+
+/* =======================
+   Responsive Design
+======================= */
+
+/* Mobile design  (768px and smaller) */
+
+@media (max-width: 768px) {
+
+    /* landing.html */
+    .landing-buttons {
+        display: flex;
+        flex-direction: column;
+        /* Stack the heading and button vertically */
+        align-items: center;
+        /* Center the content in each section */
+        padding: 20px;
+        border: 4px solid black;
+        background-color: #FFFF00;
+        border-radius: 15px;
+    }
+
+    /* base.html (nav-bar) */
+    .nav-link {
+        display: none;
+    }
+
+    #hamburger {
+        display: flex;
+    }
+
+    .cross #strich1 {
+        transform: translateY(0.57rem) rotate(45deg);
+        /*45rotieren und den strich ein wenig runter schieben auf der y-achse*/
+    }
+
+    .cross #strich2 {
+        opacity: 0;
+        /*45rotieren und den strich ein wenig runter schieben auf der y-achse*/
+    }
+
+    .cross #strich3 {
+        transform: translateY(-0.57rem) rotate(-45deg);
+        /*45rotieren und den strich ein wenig runter schieben auf der y-achse*/
+    }
+
+    div.nav-open~#hamburger-wall {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 30px;
+
+    }
+
+    .option {
+        display: flex;
+        font-size: 1.5rem;
+        padding: 23px;
+    }
+
+    /* hamburger wall */
+    div.nav-open~.bottom {
+        display: none;
+    }
+
+    body {
+        font-family: 'Press Start 2P', cursive;
+        font-size: 0.8rem;
+        /* try 1.5rem or more if needed */
+    }
+
+
+    /* make th forwärts und rückwärtsbuttons smaller */
+    .book-left {
+        display: none;
+    }
+
+    .book-right {
+        display: none;
+    }
+
+    .book-middle {
+        display: flex;
+    }
+}
