@@ -102,6 +102,9 @@ werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'index'
 - scrolling effect
 - effects when squished (linebreak etc)
 
+gelerntes:
+- css: wenn man prozente angeib dann wird das immer relativ zum parent-div gemeint und zwar zu breite des parents
+
 
 
 

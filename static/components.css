@@ -18,6 +18,23 @@
     max-width: 960px;
 }
 
+.scrollable-box {
+    /* 70% des bottoms in der höhe */
+    display: flex;
+    /*display flex makes the height 100% of ots parent for some reason*/
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    overflow-x: auto;
+    /* Ermöglicht horizontales Scrollen bei Bedarf */
+    overflow-y: auto;
+    /* Border etc */
+    padding: 4vh;
+    /* breite */
+    width: 60%;
+    max-width: 960px;
+}
+
 .text-break {
     word-break: break-all;
     text-align: center;
@@ -51,15 +68,6 @@
 .box-color {
     width: 100%;
     background-color: rgb(255, 56, 212);
-    display: flex;
-    /*display flex makes the height 100% of ots parent for some reason*/
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    overflow-x: auto;
-    /* Ermöglicht horizontales Scrollen bei Bedarf */
-    overflow-y: auto;
-    /* Border etc */
     border: 5px solid #000;
     padding: 4vh;
 }
@@ -74,5 +82,9 @@
 }
 
 .text {
-    text-align: center;
+    text-align: justify;
+}
+
+.gap {
+    gap: 10%;
 }
