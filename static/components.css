@@ -89,6 +89,10 @@
     text-align: justify;
 }
 
+.text2 {
+    text-align: center;
+}
+
 .gap {
     gap: 10%;
 }
