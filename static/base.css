@@ -41,6 +41,19 @@ body {
     height: 100%;
 }
 
+.bottom-2_8-2 {
+    /* 15% des bottoms in der höhe */
+    /* 70% des bottoms in der höhe */
+    flex: 0 0 20%;
+    display: flex;
+}
+
+.bottom-2_8-8 {
+    /* 70% des bottoms in der höhe */
+    flex: 0 0 80%;
+    display: flex;
+}
+
 /* --------------- Component/Elementwise DESIGN --------------- */
 .top-buttons {
     display: flex;

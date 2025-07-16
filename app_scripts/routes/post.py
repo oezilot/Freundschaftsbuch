@@ -291,4 +291,4 @@ def show_post(username):
     next_username = usernames[current_index + 1] if current_index < len(usernames) - 1 else None
     prev_username = usernames[current_index - 1] if current_index > 0 else None
 
-    return render_template('userpage.html', post=post, username=username, prev_username=prev_username, next_username=next_username)
+    return render_template('userpage-better.html', post=post, username=username, prev_username=prev_username, next_username=next_username)
