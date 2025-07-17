@@ -263,8 +263,7 @@
     overflow-y: auto;
 }
 
-/* BASE.html */
-/*center the username of the post*/
+/* NEED */
 .naviagation-buttons {
     display: flex;
     justify-content: space-between;
@@ -272,9 +271,6 @@
     align-items: center;
     /* Vertically center the items */
     width: 95%;
-    /* Full width of the parent container */
-    margin: 0 auto;
-    /* die zahl bedeuted das margin des rands oben und unten und das auto stllt sicher dass es horizontal steht */
     position: relative;
     /* Allows absolute positioning for buttons */
 }
@@ -394,13 +390,13 @@ hr {
     border-radius: 25px;
     padding: 20px;
     /* Platz innerhalb des Rahmens */
-    margin: 20px auto;
     /* Abstand des Rechtecks oben und unten */
     box-sizing: border-box;
     /* Padding und Border in die Größe einberechnen */
     overflow: hidden;
     /* Verhindert, dass Inhalt über den Container hinausläuft */
-    height: 76vh;
+    height: 73vh;
+    /* je nach dem muss hier eine andere zahl hin: prozentahl die ich will des parents (hier: 90%) * faktor der sich eben ändern kann */
     width: 95%;
 }
 

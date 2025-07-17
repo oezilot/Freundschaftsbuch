@@ -44,13 +44,13 @@ body {
 .bottom-2_8-2 {
     /* 15% des bottoms in der höhe */
     /* 70% des bottoms in der höhe */
-    flex: 0 0 20%;
+    flex: 0 0 15%;
     display: flex;
 }
 
 .bottom-2_8-8 {
     /* 70% des bottoms in der höhe */
-    flex: 0 0 80%;
+    flex: 0 0 85%;
     display: flex;
 }
 
