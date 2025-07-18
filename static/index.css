@@ -16,7 +16,6 @@
 
 /* Box-Component */
 .bottom-content {
-    /* 70% des bottoms in der höhe */
     flex: 0 0 55%;
     display: flex;
 }

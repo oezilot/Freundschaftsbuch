@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/nes.css/css/nes.min.css" rel="stylesheet" />
+    <title>Squish That Shit</title>
+
+    <style>
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+        }
+
+        * {
+            word-break: break-all;
+            box-sizing: border-box;
+        }
+
+        .input-felder {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            align-items: center;
+        }
+
+        .box-unten {
+            display: flex;
+            justify-content: center;
+        }
+
+        .box {
+            height: 70vh;
+        }
+
+        .ten {
+            display: flex;
+            flex: 0 0 10%;
+        }
+
+        .eighty {
+            display: flex;
+            flex: 0 0 80%;
+        }
+
+        .scrollable {
+            overflow-x: auto;
+            overflow-y: auto;
+            border: 5px solid #000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            max-width: 100vw;
+        }
+
+        .scrollable-box {
+            width: 100%;
+            max-width: 960px;
+            padding: 1rem;
+            border: 3px solid #000;
+            margin: 1rem 0;
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box-unten ten">
+        <h1>Title</h1>
+    </div>
+
+    <div class="box eighty scrollable">
+        <div class="input-felder">
+
+            <div class="scrollable-box">
+                <label for="name1">So nennt man mich auch noch:</label>
+                <input class="nes-input" type="text" id="name1" name="name" required>
+                <br>
+
+                <label for="birthday1">Mein Geburtstag:</label>
+                <input class="nes-input" type="date" id="birthday1" name="bday" required>
+                <br>
+
+                <label for="favcolor1">Meine Lieblingsfarbe:</label>
+                <input type="color" id="favcolor1" name="favcolor" value="#ff0000" required>
+            </div>
+
+            <div class="scrollable-box">
+                <label for="name2">So nennt man mich auch noch:</label>
+                <input class="nes-input" type="text" id="name2" name="name" required>
+                <br>
+
+                <label for="birthday2">Mein Geburtstag:</label>
+                <input class="nes-input" type="date" id="birthday2" name="bday" required>
+                <br>
+
+                <label for="favcolor2">Meine Lieblingsfarbe:</label>
+                <input type="color" id="favcolor2" name="favcolor" value="#ff0000" required>
+            </div>
+
+            <div class="scrollable-box">
+                <label for="name3">So nennt man mich auch noch:</label>
+                <input class="nes-input" type="text" id="name3" name="name" required>
+                <br>
+
+                <label for="birthday3">Mein Geburtstag:</label>
+                <input class="nes-input" type="date" id="birthday3" name="bday" required>
+                <br>
+
+                <label for="favcolor3">Meine Lieblingsfarbe:</label>
+                <input type="color" id="favcolor3" name="favcolor" value="#ff0000" required>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="box-unten ten">
+        <button class="nes-btn">Submit</button>
+        <button class="nes-btn">Abbrechen</button>
+    </div>
+</body>
+
+</html>
