@@ -130,7 +130,7 @@ def post():
     if user_post:
         return render_template('edit_post.html', post=user_post)
     else:
-        return render_template('post.html')
+        return render_template('post-better.html')
 
 
 # das template wo man einen post bearbeitet wenn man bereits einen hat
