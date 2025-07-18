@@ -6,9 +6,10 @@
     <h1>Create a Post</h1>
 </div>
 
-<div class="scrollable-box bottom-content center-h"> <!--scrollable-box-->
+<div class="bottom-content scrollable"> <!--scrollable-box-->
 
-    <form action="{{url_for('post.post')}}" id="post-form" method="post" enctype="multipart/form-data">
+    <form class="question-box" action="{{url_for('post.post')}}" id="post-form" method="post"
+        enctype="multipart/form-data">
 
         <section class="showcase" v-for="sample in collection" :key="sample">
             <section class="nes-container with-title">
@@ -221,7 +222,7 @@
         </section>
     </form>
 </div>
-<div class="bottom-button responsive-center-h-v gap">
+<div class="bottom-button responsive-center-h-v gap-small">
     <!-- Action buttons -->
     <button class="nes-btn" type="submit" form="post-form">Submit</button>
 

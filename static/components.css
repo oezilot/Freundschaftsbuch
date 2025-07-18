@@ -35,6 +35,13 @@
     max-width: 960px;
 }
 
+.question-box {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
 .text-break {
     word-break: break-all;
     text-align: center;
@@ -76,13 +83,21 @@
 
 }
 
+/* damit das choose file dings da nicht über den rand hinaud geht etc */
+input[type="file"] {
+    width: 100%;
+    max-width: 100%;
+    word-break: break-all;
+}
+
+
 .scrollable {
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    overflow-x: auto;
-    /* Ermöglicht horizontales Scrollen bei Bedarf */
     overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 70%;
+    max-width: 100vw;
 }
 
 .text {
