@@ -1,0 +1,37 @@
+/* häufig verwendete design-elemente/kombinationen */
+
+/* BOXES (very basic style) */
+.question-box { /* userpage --> the answers of the questions will sit in here */
+}
+.box { /* this is THE box with minimal design, the box-styles can addded to this for more complex design */
+}
+
+/* BOX Addons (additional styles for the basic boxes) */
+.box-scrollable { /* used in many places -> boy with a scollbar as soo as content does not fit in there anymore */
+}
+
+/* changing built-in css-stuff */
+.scrollbar {
+}
+.check-box {
+}
+.middle-finger-pointer {
+}
+
+
+/* COLOR Palette für consistente farben */
+.pink-bg {
+    background-color: rgb(255, 46, 161);
+}
+.red-bg {
+    background-color: red;
+}
+.yellow-bg {
+    background-color: yellow;
+}
+
+/* TEXT (linebreaks, size, etc) */
+.text { /* mehrere wörter */
+}
+.title {
+}
